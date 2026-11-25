@@ -1,0 +1,1065 @@
+QueryID,Level,NL_Query,Expected_SQL,Generated_SQL,Execution_Success,Generated_Rows,Expected_Rows,Exact_Match,Value_Match_Pct,Row_Match_Pct,Col_Match_Pct,Confidence_Score,Operation_Match,Column_Match,Generation_Time_s
+1,Simple,Show all sales from the North region,SELECT * FROM data WHERE Region = 'North',SELECT * FROM data WHERE Region = 'North',TRUE,206,206,TRUE,100,100,100,100,100,100,28.68
+2,Simple,List all products sold in 2024,SELECT * FROM data WHERE Year = 2024,"SELECT DISTINCT Product
+FROM data
+WHERE Year = 2024",TRUE,10,346,FALSE,0,2.9,5.9,100,100,100,5.43
+3,Simple,Show orders with total sales above 5000,SELECT * FROM data WHERE TotalSales > 5000,SELECT * FROM data WHERE TotalSales > 5000,TRUE,344,344,TRUE,100,100,100,66.7,0,100,4.73
+4,Simple,Display all laptop orders,SELECT * FROM data WHERE Product = 'Laptop',SELECT * FROM data WHERE Product = 'Laptop',TRUE,86,86,TRUE,100,100,100,93.3,100,80,3.49
+5,Simple,List the first 10 records,SELECT * FROM data LIMIT 10,SELECT * FROM data LIMIT 10,TRUE,10,10,TRUE,100,100,100,93.3,100,80,3.35
+6,Simple,Show all orders paid by credit card,SELECT * FROM data WHERE PaymentMethod = 'Credit Card',SELECT * FROM data WHERE PaymentMethod = 'Credit Card',TRUE,199,199,TRUE,100,100,100,43.3,0,80,3.91
+7,Simple,What are the distinct product names?,SELECT DISTINCT Product FROM data,SELECT DISTINCT Product FROM data,TRUE,10,10,TRUE,100,100,100,100,100,100,2.74
+8,Simple,Show orders from Q1,SELECT * FROM data WHERE Quarter = 'Q1',SELECT * FROM data WHERE Quarter = 'Q1',TRUE,222,222,TRUE,100,100,100,95,100,80,3.9
+9,Simple,List all corporate customer orders,SELECT * FROM data WHERE CustomerType = 'Corporate',SELECT * FROM data WHERE CustomerType = 'Corporate',TRUE,235,235,TRUE,100,100,100,93.3,100,80,4.01
+10,Simple,Show orders with discount greater than 0.20,SELECT * FROM data WHERE Discount > 0.20,SELECT * FROM data WHERE Discount > 0.20,TRUE,299,299,TRUE,100,100,100,100,100,100,4.16
+11,Simple,Display all orders by Ali Hassan,SELECT * FROM data WHERE Salesperson = 'Ali Hassan',SELECT * FROM data WHERE CustomerType = 'Ali Hassan',TRUE,0,69,FALSE,0,0,100,30,0,80,3.84
+12,Simple,Show all electronics category products,SELECT * FROM data WHERE Category = 'Electronics',SELECT * FROM data WHERE Category = 'Electronics',TRUE,469,469,TRUE,100,100,100,83.3,100,50,3.51
+13,Simple,List orders from January,SELECT * FROM data WHERE Month = 'Jan',SELECT * FROM data WHERE Month = 'January',TRUE,0,82,FALSE,0,0,100,72.5,100,80,3.53
+14,Simple,Show all orders with rating above 4,SELECT * FROM data WHERE Rating > 4,SELECT * FROM data WHERE Rating > 4,TRUE,269,269,TRUE,100,100,100,100,100,100,3.4
+15,Simple,Display orders with quantity less than 5,SELECT * FROM data WHERE Quantity < 5,SELECT * FROM data WHERE Quantity < 5,TRUE,185,185,TRUE,100,100,100,100,100,100,3.43
+16,Simple,Show all regions in the dataset,SELECT DISTINCT Region FROM data,SELECT DISTINCT Region FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.74
+17,Simple,List all payment methods used,SELECT DISTINCT PaymentMethod FROM data,SELECT DISTINCT PaymentMethod FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.94
+18,Simple,Show orders from the East region in 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,TRUE,68,68,TRUE,100,100,100,100,100,100,5.83
+19,Simple,Display smartwatch orders with quantity above 10,SELECT * FROM data WHERE Product = 'Smartwatch' AND Quantity > 10,SELECT * FROM data WHERE Product = 'smartwatch' AND Quantity > 10,TRUE,0,54,FALSE,0,0,100,83.8,100,100,5.15
+20,Simple,List all orders between unit price 100 and 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,TRUE,452,452,TRUE,100,100,100,100,100,100,5.57
+21,Simple,Show the most recent 20 orders,SELECT * FROM data ORDER BY Date DESC LIMIT 20,"SELECT *
+FROM data
+ORDER BY Date DESC
+LIMIT 20",TRUE,20,20,TRUE,100,100,100,90,100,80,4.71
+22,Simple,List all salespersons in the dataset,SELECT DISTINCT Salesperson FROM data,SELECT DISTINCT Salesperson FROM data,TRUE,15,15,TRUE,100,100,100,100,100,100,3.08
+23,Simple,Show orders where revenue is greater than total sales,SELECT * FROM data WHERE Revenue > TotalSales,"SELECT *
+FROM data
+WHERE Revenue > TotalSales",TRUE,0,0,TRUE,100,100,100,56.7,0,100,4.12
+24,Simple,Display all customer types available,SELECT DISTINCT CustomerType FROM data,SELECT DISTINCT CustomerType FROM data,TRUE,4,4,TRUE,100,100,100,100,100,100,3.13
+25,Simple,Show all camera orders from the South region,SELECT * FROM data WHERE Product = 'Camera' AND Region = 'South',SELECT * FROM data WHERE Region = 'South' AND Product LIKE '%Camera%',TRUE,22,22,TRUE,100,100,100,100,100,100,4.72
+26,Simple,List orders where discount is zero,SELECT * FROM data WHERE Discount = 0,SELECT * FROM data WHERE Discount = 0,TRUE,23,23,TRUE,100,100,100,100,100,100,3.37
+27,Simple,Show all wearables category orders,SELECT * FROM data WHERE Category = 'Wearables',"SELECT *
+FROM data
+WHERE Category = 'Wearables'",TRUE,98,98,TRUE,100,100,100,100,100,100,3.99
+28,Simple,Display orders from 2022 Q4,SELECT * FROM data WHERE Year = 2022 AND Quarter = 'Q4',SELECT * FROM data WHERE Year = 2022 AND Quarter = 4,TRUE,0,81,FALSE,0,0,100,72.5,100,80,4.82
+29,Simple,Show all orders sorted by unit price,SELECT * FROM data ORDER BY UnitPrice,SELECT * FROM data ORDER BY UnitPrice,TRUE,1000,1000,TRUE,100,100,100,50,0,100,3.45
+30,Simple,List all returning customer orders in the West region,SELECT * FROM data WHERE CustomerType = 'Returning' AND Region = 'West',SELECT * FROM data WHERE Region = 'West',TRUE,188,45,FALSE,0,0,100,91.7,100,100,3.68
+31,Simple,Show all orders with rating exactly 5,SELECT * FROM data WHERE Rating = 5.0,SELECT * FROM data WHERE Rating = 5,TRUE,17,17,TRUE,100,100,100,100,100,100,3.48
+32,Simple,Display all office category products,SELECT * FROM data WHERE Category = 'Office',"SELECT *
+FROM data
+WHERE Category = 'Office'",TRUE,111,111,TRUE,100,100,100,83.3,100,50,3.91
+33,Simple,List online customer orders paid by online transfer,SELECT * FROM data WHERE CustomerType = 'Online' AND PaymentMethod = 'Online Transfer',"SELECT *
+FROM data
+WHERE PaymentMethod = 'Online Transfer'",TRUE,222,59,FALSE,0,0,100,51.7,0,80,4.37
+34,Simple,Show orders from March 2023,SELECT * FROM data WHERE Month = 'Mar' AND Year = 2023,SELECT * FROM data WHERE Month = 'March' AND Year = 2023,TRUE,0,22,FALSE,0,0,100,72.5,100,80,5.09
+35,Simple,Display all distinct categories in the dataset,SELECT DISTINCT Category FROM data,SELECT DISTINCT Category FROM data,TRUE,4,4,TRUE,100,100,100,90,100,80,2.81
+36,Simple,Show all monitor and keyboard orders,"SELECT * FROM data WHERE Product IN ('Monitor', 'Keyboard')",SELECT * FROM data WHERE Product LIKE '%monitor%' OR Product LIKE '%keyboard%',TRUE,185,185,TRUE,100,100,100,93.3,100,80,4.36
+37,Simple,List orders with revenue above 10000,SELECT * FROM data WHERE Revenue > 10000,SELECT * FROM data WHERE Revenue > 10000,TRUE,137,137,TRUE,100,100,100,100,100,100,4.07
+38,Simple,Show all orders handled by Fatima Noor,SELECT * FROM data WHERE Salesperson = 'Fatima Noor',SELECT * FROM data WHERE Salesperson = 'Fatima Noor',TRUE,62,62,TRUE,100,100,100,40,0,80,3.76
+39,Simple,Display the cheapest 5 products by unit price,SELECT * FROM data ORDER BY UnitPrice ASC LIMIT 5,SELECT Product FROM data ORDER BY UnitPrice LIMIT 5,TRUE,5,5,FALSE,0,100,5.9,50,0,100,3.69
+40,Simple,Show all installment payment orders,SELECT * FROM data WHERE PaymentMethod = 'Installment',SELECT * FROM data WHERE PaymentMethod = 'Installment',TRUE,196,196,TRUE,100,100,100,93.3,100,80,3.72
+41,Aggregation,What is the total sales by region?,"SELECT Region, SUM(TotalSales) FROM data GROUP BY Region","SELECT Region, SUM(TotalSales) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.01
+42,Aggregation,Show average unit price per product,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product","SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category",TRUE,4,10,FALSE,0,40,50,75,100,50,4.01
+43,Aggregation,Count the number of orders per category,"SELECT Category, COUNT(*) FROM data GROUP BY Category","SELECT Category, COUNT(*) FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,100,100,100,100,3.43
+44,Aggregation,Total revenue by year,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year","SELECT Year, SUM(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.6
+45,Aggregation,Maximum total sales in each region,"SELECT Region, MAX(TotalSales) FROM data GROUP BY Region","SELECT Region, MAX(TotalSales)
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,100,83.3,66.7,100,4.16
+46,Aggregation,What is the overall average rating?,SELECT AVG(Rating) FROM data,SELECT avg(Rating) FROM data,TRUE,1,1,TRUE,100,100,100,100,100,100,2.9
+47,Aggregation,Top 5 products by total revenue,"SELECT Product, SUM(Revenue) FROM data GROUP BY Product ORDER BY SUM(Revenue) DESC LIMIT 5","SELECT Product, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Product
+ORDER BY TotalRevenue DESC
+LIMIT 5",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.08
+48,Aggregation,Monthly total sales for 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,100,100,100,7.36
+49,Aggregation,How many orders per salesperson?,"SELECT Salesperson, COUNT(*) FROM data GROUP BY Salesperson","SELECT Salesperson, COUNT(OrderID) AS NumberOfOrders FROM data GROUP BY Salesperson",TRUE,15,15,TRUE,100,100,50,100,100,100,5.55
+50,Aggregation,Minimum and maximum unit price per category,"SELECT Category, MIN(UnitPrice), MAX(UnitPrice) FROM data GROUP BY Category","SELECT Category, MIN(UnitPrice) AS MinimumUnitPrice, MAX(UnitPrice) AS MaximumUnitPrice FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,33.3,100,100,100,6.11
+51,Aggregation,Total quantity sold by product,"SELECT Product, SUM(Quantity) FROM data GROUP BY Product","SELECT Product, SUM(Quantity) FROM data GROUP BY Product",TRUE,10,10,TRUE,100,100,100,100,100,100,3.85
+52,Aggregation,Average discount per payment method,"SELECT PaymentMethod, AVG(Discount) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod,AVG(Discount) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.35
+53,Aggregation,Total orders per quarter,"SELECT Quarter, COUNT(*) FROM data GROUP BY Quarter","SELECT
+  Quarter
+FROM data
+GROUP BY
+  Quarter",TRUE,4,4,FALSE,0,100,50,75,50,100,4.22
+54,Aggregation,Average rating by product,"SELECT Product, AVG(Rating) FROM data GROUP BY Product",SELECT avg(Rating) FROM data,TRUE,1,10,FALSE,0,10,50,50,50,50,3.22
+55,Aggregation,Sum of revenue per customer type,"SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType","SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType",TRUE,4,4,TRUE,100,100,100,100,100,100,4.09
+56,Aggregation,Count of distinct products per region,"SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.02
+57,Aggregation,Average quantity per order by region,"SELECT Region, AVG(Quantity) FROM data GROUP BY Region","SELECT Region, AVG(Quantity) AS AverageQuantity
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,50,66.7,100,100,4.83
+58,Aggregation,Top 3 salespersons by total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson ORDER BY SUM(Revenue) DESC LIMIT 3","SELECT Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Salesperson
+ORDER BY TotalRevenue DESC
+LIMIT 3",TRUE,3,3,TRUE,100,100,50,88.9,66.7,100,6.86
+59,Aggregation,Total sales per payment method,"SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.36
+60,Aggregation,Number of orders above 5000 in total sales,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,TRUE,1,1,TRUE,100,100,100,83.3,50,100,5.05
+61,Aggregation,Average revenue per year,"SELECT Year, AVG(Revenue) FROM data GROUP BY Year","SELECT Year, AVG(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.95
+62,Aggregation,Highest rated product on average,"SELECT Product, AVG(Rating) FROM data GROUP BY Product ORDER BY AVG(Rating) DESC LIMIT 1",SELECT Product FROM data ORDER BY Rating DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,66.7,0,100,3.81
+63,Aggregation,Total number of corporate orders per region,"SELECT Region, COUNT(*) FROM data WHERE CustomerType = 'Corporate' GROUP BY Region","SELECT
+  Region,
+  COUNT(OrderID)
+FROM data
+WHERE
+  CustomerType = 'Corporate'
+GROUP BY
+  Region",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.88
+64,Aggregation,Lowest 5 products by average unit price,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product ORDER BY AVG(UnitPrice) ASC LIMIT 5",SELECT Product FROM data ORDER BY UnitPrice DESC LIMIT 5,TRUE,5,5,FALSE,0,100,50,62.5,0,100,4.28
+65,Aggregation,How many distinct salespersons per region?,"SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.92
+66,Aggregation,Total discount amount by product,"SELECT Product, SUM(Discount * TotalSales) FROM data GROUP BY Product","SELECT
+  SUM(Discount)
+FROM data",TRUE,1,10,FALSE,0,10,0,50,50,50,3.8
+67,Aggregation,Average total sales per month across all years,"SELECT Month, AVG(TotalSales) FROM data GROUP BY Month","SELECT
+  Month,
+  AVG(TotalSales)
+FROM data
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,66.7,66.7,66.7,5.77
+68,Aggregation,Count of orders per year and quarter,"SELECT Year, Quarter, COUNT(*) FROM data GROUP BY Year, Quarter","SELECT
+  Year,
+  Quarter,
+  COUNT(OrderID)
+FROM data
+GROUP BY
+  Year,
+  Quarter",TRUE,12,12,TRUE,100,100,66.7,100,100,100,6.67
+69,Aggregation,Total revenue from electronics category,SELECT SUM(Revenue) FROM data WHERE Category = 'Electronics',SELECT sum(TotalSales) FROM data WHERE Category = 'Electronics',TRUE,1,1,FALSE,0,100,0,87.5,100,50,4.34
+70,Aggregation,Products with more than 100 orders,"SELECT Product, COUNT(*) FROM data GROUP BY Product HAVING COUNT(*) > 100",SELECT Product FROM data WHERE Product IN (SELECT Product FROM data GROUP BY Product HAVING COUNT(*) > 100),TRUE,538,5,FALSE,0,0,50,100,100,100,6.71
+71,Complex,Show total sales by region and product,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product",TRUE,50,50,TRUE,100,100,66.7,100,100,100,6.61
+72,Complex,Products with above-average revenue,SELECT * FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),SELECT Product FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),TRUE,316,316,FALSE,0,100,5.9,100,100,100,4.34
+73,Complex,Region with the highest total revenue,"SELECT Region, SUM(Revenue) FROM data GROUP BY Region ORDER BY SUM(Revenue) DESC LIMIT 1",SELECT Region FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,33.3,0,50,3.65
+74,Complex,Monthly sales trend for laptops in 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Product = 'Laptop' AND Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024 AND Product LIKE '%Laptop%'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,11,11,TRUE,100,100,100,100,100,100,8.67
+75,Complex,Compare total revenue by customer type per year,"SELECT Year, CustomerType, SUM(Revenue) FROM data GROUP BY Year, CustomerType","SELECT CustomerType, Year, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY CustomerType, Year
+ORDER BY Year, TotalRevenue DESC",TRUE,12,12,FALSE,100,100,66.7,83.3,66.7,100,7.13
+76,Complex,Top 3 regions by average order rating,"SELECT Region, AVG(Rating) FROM data GROUP BY Region ORDER BY AVG(Rating) DESC LIMIT 3",SELECT Region FROM data ORDER BY AVG(Rating) DESC LIMIT 3,FALSE,0,3,FALSE,0,0,0,37.8,33.3,100,4.01
+77,Complex,Percentage of total revenue each product contributes,"SELECT Product, ROUND(SUM(Revenue) * 100.0 / (SELECT SUM(Revenue) FROM data), 2) FROM data GROUP BY Product","SELECT
+  Product,
+  TotalSales * 1.0 / (
+    SELECT
+      SUM(TotalSales)
+    FROM data
+  ) AS PercentageOfTotalRevenue
+FROM data
+GROUP BY
+  Product",TRUE,10,10,FALSE,0,100,50,58.3,66.7,50,9.59
+78,Complex,Salespersons who generated above-average total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson HAVING SUM(Revenue) > (SELECT AVG(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson))",SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,16.7,0,50,4.16
+79,Complex,Quarterly revenue trend for each region,"SELECT Region, Quarter, SUM(Revenue) FROM data GROUP BY Region, Quarter ORDER BY Region, Quarter","SELECT
+  Year,
+  Quarter,
+  SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY
+  Year,
+  Quarter
+ORDER BY
+  Year,
+  Quarter",TRUE,12,20,FALSE,0,60,33.3,83.3,100,66.7,8.77
+80,Complex,Products with highest sales in each region,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product ORDER BY Region, SUM(TotalSales) DESC","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product
+ORDER BY TotalSales DESC",TRUE,50,50,TRUE,100,100,66.7,66.7,50,100,7.56
+81,Complex,Year-over-year revenue growth,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year ORDER BY Year","SELECT
+  Year,
+  Revenue,
+  LAG(Revenue, 1, 0) OVER (ORDER BY Year) AS PreviousYearRevenue
+FROM data
+ORDER BY
+  Year",TRUE,1000,3,FALSE,50,0,50,100,100,100,10.27
+82,Complex,Average revenue per order for each product category by year,"SELECT Year, Category, AVG(Revenue) FROM data GROUP BY Year, Category","SELECT
+  Category,
+  Year,
+  AVG(Revenue)
+FROM data
+GROUP BY
+  Category,
+  Year",TRUE,12,12,FALSE,100,100,100,58.3,100,75,8.03
+83,Complex,Find salespersons who sold all product categories,SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(DISTINCT Category) = (SELECT COUNT(DISTINCT Category) FROM data),SELECT Salesperson FROM data WHERE Salesperson IN (SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(Category) = (SELECT COUNT(DISTINCT Category) FROM data)),TRUE,0,15,FALSE,50,0,100,65,100,50,9.12
+84,Complex,Products sold in every region,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT Region) = (SELECT COUNT(DISTINCT Region) FROM data),SELECT DISTINCT Region FROM data,TRUE,5,10,FALSE,50,50,0,75,100,50,3.13
+85,Complex,Monthly trend of average discount rate in 2024,"SELECT Month, AVG(Discount) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  STRFTIME('%Y-%m', Date) AS Month,
+  AVG(Discount) AS AverageDiscountRate
+FROM data
+WHERE
+  STRFTIME('%Y', Date) = '2024'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,12,12,FALSE,100,100,50,100,100,100,13.6
+86,Complex,Compare cash vs credit card payments by total revenue and average rating,"SELECT PaymentMethod, SUM(Revenue), AVG(Rating) FROM data WHERE PaymentMethod IN ('Cash', 'Credit Card') GROUP BY PaymentMethod","SELECT
+  PaymentMethod,
+  SUM(TotalSales) AS TotalRevenue,
+  AVG(Rating) AS AverageRating
+FROM data
+GROUP BY
+  PaymentMethod",TRUE,5,2,FALSE,0,0,33.3,58.3,75,50,9.14
+87,Complex,Rank products by total sales within each region,"SELECT Region, Product, SUM(TotalSales), RANK() OVER (PARTITION BY Region ORDER BY SUM(TotalSales) DESC) FROM data GROUP BY Region, Product","SELECT
+  Product,
+  SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY
+  Product,
+  Region
+ORDER BY
+  TotalSales DESC",TRUE,50,50,FALSE,0,100,25,100,100,100,8.69
+88,Complex,Running total of revenue by date,"SELECT Date, Revenue, SUM(Revenue) OVER (ORDER BY Date) FROM data","SELECT
+  Date,
+  SUM(Revenue) OVER (ORDER BY Date) AS RunningTotalRevenue
+FROM data",TRUE,1000,1000,FALSE,0,100,33.3,75,50,100,6.01
+89,Complex,Categories where average unit price exceeds 500,"SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500",SELECT Category FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500,TRUE,1,1,FALSE,0,100,50,66.7,100,100,5.19
+90,Complex,Top salesperson in each region by revenue,"SELECT Region, Salesperson, SUM(Revenue) FROM data GROUP BY Region, Salesperson ORDER BY Region, SUM(Revenue) DESC","SELECT Region, Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Region, Salesperson
+ORDER BY Region, TotalRevenue DESC",TRUE,75,75,TRUE,100,100,66.7,75,50,100,9.79
+91,Complex,Orders where total sales in top 10 percent,SELECT * FROM data WHERE TotalSales >= (SELECT TotalSales FROM data ORDER BY TotalSales DESC LIMIT 1 OFFSET (SELECT COUNT(*)/10 FROM data)),"SELECT *
+FROM data
+WHERE TotalSales >= (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY TotalSales) FROM data)",FALSE,0,101,FALSE,0,0,0,15.6,0,100,8.16
+92,Complex,Product category revenue split by online vs walk-in customers,"SELECT Category, CustomerType, SUM(Revenue) FROM data WHERE CustomerType IN ('Online', 'Walk-in') GROUP BY Category, CustomerType","SELECT
+  Category,
+  SUM(CASE WHEN CustomerType = 'Online' THEN Revenue ELSE 0 END) AS OnlineRevenue,
+  SUM(CASE WHEN CustomerType = 'Walk-In' THEN Revenue ELSE 0 END) AS WalkInRevenue
+FROM data
+GROUP BY
+  Category",TRUE,4,8,FALSE,0,50,33.3,80.6,100,66.7,15.9
+93,Complex,Show moving average of daily revenue over 7-day window,"SELECT Date, Revenue, AVG(Revenue) OVER (ORDER BY Date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) FROM data","SELECT
+  Date,
+  Revenue,
+  AVG(Revenue) OVER (ORDER BY Date ASC ROWS BETWEEN 6 PRECEDING AND 6 FOLLOWING) AS MovingAverageRevenue
+FROM data",TRUE,1000,1000,FALSE,100,100,66.7,100,100,100,10.68
+94,Complex,Months with above-average total orders,"SELECT Month, COUNT(*) FROM data GROUP BY Month HAVING COUNT(*) > (SELECT COUNT(*) / 12 FROM data)",SELECT Month FROM data GROUP BY Month ORDER BY COUNT(OrderID) DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,33.3,0,100,19.68
+95,Complex,Revenue difference between highest and lowest performing salesperson,SELECT MAX(total) - MIN(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson),"SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1)
+UNION
+SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales ASC LIMIT 1)",TRUE,2,1,FALSE,0,0,0,50,0,50,48.07
+96,Complex,Show regions where all products have been sold,SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),TRUE,5,5,TRUE,100,100,100,66.7,100,100,7.72
+97,Complex,Average order value trend by quarter and year,"SELECT Year, Quarter, AVG(TotalSales) FROM data GROUP BY Year, Quarter ORDER BY Year, Quarter","SELECT
+  STRFTIME('%Y', Date) AS Year,
+  STRFTIME('%m', Date) AS Month,
+  STRFTIME('%Q', Date) AS Quarter,
+  AVG(TotalSales) AS AverageOrderValue
+FROM data
+GROUP BY Year, Month, Quarter
+ORDER BY Year, Month, Quarter",TRUE,36,12,FALSE,0,0,66.7,100,100,100,16.93
+98,Complex,Cumulative sum of quantity sold per product ordered by date,"SELECT Product, Date, Quantity, SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) FROM data","SELECT
+  Date,
+  Product,
+  SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) AS CumulativeQuantity
+FROM data",TRUE,1000,1000,FALSE,0,100,50,75,50,100,8.56
+99,Complex,Products that are only sold through online customers,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT CustomerType) = 1 AND MAX(CustomerType) = 'Online',"SELECT DISTINCT Product
+FROM data
+WHERE CustomerType = 'Online'",TRUE,10,0,FALSE,50,0,100,100,100,100,150.01
+100,Complex,Compare revenue per unit across all products and rank them,"SELECT Product, SUM(Revenue)/SUM(Quantity) as RevenuePerUnit FROM data GROUP BY Product ORDER BY RevenuePerUnit DESC","SELECT
+  Product,
+  Revenue / Quantity AS RevenuePerUnit,
+  RANK(Revenue / Quantity) OVER (ORDER BY Revenue / Quantity DESC) AS RevenueRank
+FROM data",FALSE,0,10,FALSE,0,0,0,26.7,0,100,34.91
+1,Simple,Show all sales from the North region,SELECT * FROM data WHERE Region = 'North',SELECT * FROM data WHERE Region = 'North',TRUE,206,206,TRUE,100,100,100,100,100,100,28.68
+2,Simple,List all products sold in 2024,SELECT * FROM data WHERE Year = 2024,"SELECT DISTINCT Product
+FROM data
+WHERE Year = 2024",TRUE,10,346,FALSE,0,2.9,5.9,100,100,100,5.43
+3,Simple,Show orders with total sales above 5000,SELECT * FROM data WHERE TotalSales > 5000,SELECT * FROM data WHERE TotalSales > 5000,TRUE,344,344,TRUE,100,100,100,66.7,0,100,4.73
+4,Simple,Display all laptop orders,SELECT * FROM data WHERE Product = 'Laptop',SELECT * FROM data WHERE Product = 'Laptop',TRUE,86,86,TRUE,100,100,100,93.3,100,80,3.49
+5,Simple,List the first 10 records,SELECT * FROM data LIMIT 10,SELECT * FROM data LIMIT 10,TRUE,10,10,TRUE,100,100,100,93.3,100,80,3.35
+6,Simple,Show all orders paid by credit card,SELECT * FROM data WHERE PaymentMethod = 'Credit Card',SELECT * FROM data WHERE PaymentMethod = 'Credit Card',TRUE,199,199,TRUE,100,100,100,43.3,0,80,3.91
+7,Simple,What are the distinct product names?,SELECT DISTINCT Product FROM data,SELECT DISTINCT Product FROM data,TRUE,10,10,TRUE,100,100,100,100,100,100,2.74
+8,Simple,Show orders from Q1,SELECT * FROM data WHERE Quarter = 'Q1',SELECT * FROM data WHERE Quarter = 'Q1',TRUE,222,222,TRUE,100,100,100,95,100,80,3.9
+9,Simple,List all corporate customer orders,SELECT * FROM data WHERE CustomerType = 'Corporate',SELECT * FROM data WHERE CustomerType = 'Corporate',TRUE,235,235,TRUE,100,100,100,93.3,100,80,4.01
+10,Simple,Show orders with discount greater than 0.20,SELECT * FROM data WHERE Discount > 0.20,SELECT * FROM data WHERE Discount > 0.20,TRUE,299,299,TRUE,100,100,100,100,100,100,4.16
+11,Simple,Display all orders by Ali Hassan,SELECT * FROM data WHERE Salesperson = 'Ali Hassan',SELECT * FROM data WHERE CustomerType = 'Ali Hassan',TRUE,0,69,FALSE,0,0,100,30,0,80,3.84
+12,Simple,Show all electronics category products,SELECT * FROM data WHERE Category = 'Electronics',SELECT * FROM data WHERE Category = 'Electronics',TRUE,469,469,TRUE,100,100,100,83.3,100,50,3.51
+13,Simple,List orders from January,SELECT * FROM data WHERE Month = 'Jan',SELECT * FROM data WHERE Month = 'January',TRUE,0,82,FALSE,0,0,100,72.5,100,80,3.53
+14,Simple,Show all orders with rating above 4,SELECT * FROM data WHERE Rating > 4,SELECT * FROM data WHERE Rating > 4,TRUE,269,269,TRUE,100,100,100,100,100,100,3.4
+15,Simple,Display orders with quantity less than 5,SELECT * FROM data WHERE Quantity < 5,SELECT * FROM data WHERE Quantity < 5,TRUE,185,185,TRUE,100,100,100,100,100,100,3.43
+16,Simple,Show all regions in the dataset,SELECT DISTINCT Region FROM data,SELECT DISTINCT Region FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.74
+17,Simple,List all payment methods used,SELECT DISTINCT PaymentMethod FROM data,SELECT DISTINCT PaymentMethod FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.94
+18,Simple,Show orders from the East region in 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,TRUE,68,68,TRUE,100,100,100,100,100,100,5.83
+19,Simple,Display smartwatch orders with quantity above 10,SELECT * FROM data WHERE Product = 'Smartwatch' AND Quantity > 10,SELECT * FROM data WHERE Product = 'smartwatch' AND Quantity > 10,TRUE,0,54,FALSE,0,0,100,83.8,100,100,5.15
+20,Simple,List all orders between unit price 100 and 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,TRUE,452,452,TRUE,100,100,100,100,100,100,5.57
+21,Simple,Show the most recent 20 orders,SELECT * FROM data ORDER BY Date DESC LIMIT 20,"SELECT *
+FROM data
+ORDER BY Date DESC
+LIMIT 20",TRUE,20,20,TRUE,100,100,100,90,100,80,4.71
+22,Simple,List all salespersons in the dataset,SELECT DISTINCT Salesperson FROM data,SELECT DISTINCT Salesperson FROM data,TRUE,15,15,TRUE,100,100,100,100,100,100,3.08
+23,Simple,Show orders where revenue is greater than total sales,SELECT * FROM data WHERE Revenue > TotalSales,"SELECT *
+FROM data
+WHERE Revenue > TotalSales",TRUE,0,0,TRUE,100,100,100,56.7,0,100,4.12
+24,Simple,Display all customer types available,SELECT DISTINCT CustomerType FROM data,SELECT DISTINCT CustomerType FROM data,TRUE,4,4,TRUE,100,100,100,100,100,100,3.13
+25,Simple,Show all camera orders from the South region,SELECT * FROM data WHERE Product = 'Camera' AND Region = 'South',SELECT * FROM data WHERE Region = 'South' AND Product LIKE '%Camera%',TRUE,22,22,TRUE,100,100,100,100,100,100,4.72
+26,Simple,List orders where discount is zero,SELECT * FROM data WHERE Discount = 0,SELECT * FROM data WHERE Discount = 0,TRUE,23,23,TRUE,100,100,100,100,100,100,3.37
+27,Simple,Show all wearables category orders,SELECT * FROM data WHERE Category = 'Wearables',"SELECT *
+FROM data
+WHERE Category = 'Wearables'",TRUE,98,98,TRUE,100,100,100,100,100,100,3.99
+28,Simple,Display orders from 2022 Q4,SELECT * FROM data WHERE Year = 2022 AND Quarter = 'Q4',SELECT * FROM data WHERE Year = 2022 AND Quarter = 4,TRUE,0,81,FALSE,0,0,100,72.5,100,80,4.82
+29,Simple,Show all orders sorted by unit price,SELECT * FROM data ORDER BY UnitPrice,SELECT * FROM data ORDER BY UnitPrice,TRUE,1000,1000,TRUE,100,100,100,50,0,100,3.45
+30,Simple,List all returning customer orders in the West region,SELECT * FROM data WHERE CustomerType = 'Returning' AND Region = 'West',SELECT * FROM data WHERE Region = 'West',TRUE,188,45,FALSE,0,0,100,91.7,100,100,3.68
+31,Simple,Show all orders with rating exactly 5,SELECT * FROM data WHERE Rating = 5.0,SELECT * FROM data WHERE Rating = 5,TRUE,17,17,TRUE,100,100,100,100,100,100,3.48
+32,Simple,Display all office category products,SELECT * FROM data WHERE Category = 'Office',"SELECT *
+FROM data
+WHERE Category = 'Office'",TRUE,111,111,TRUE,100,100,100,83.3,100,50,3.91
+33,Simple,List online customer orders paid by online transfer,SELECT * FROM data WHERE CustomerType = 'Online' AND PaymentMethod = 'Online Transfer',"SELECT *
+FROM data
+WHERE PaymentMethod = 'Online Transfer'",TRUE,222,59,FALSE,0,0,100,51.7,0,80,4.37
+34,Simple,Show orders from March 2023,SELECT * FROM data WHERE Month = 'Mar' AND Year = 2023,SELECT * FROM data WHERE Month = 'March' AND Year = 2023,TRUE,0,22,FALSE,0,0,100,72.5,100,80,5.09
+35,Simple,Display all distinct categories in the dataset,SELECT DISTINCT Category FROM data,SELECT DISTINCT Category FROM data,TRUE,4,4,TRUE,100,100,100,90,100,80,2.81
+36,Simple,Show all monitor and keyboard orders,"SELECT * FROM data WHERE Product IN ('Monitor', 'Keyboard')",SELECT * FROM data WHERE Product LIKE '%monitor%' OR Product LIKE '%keyboard%',TRUE,185,185,TRUE,100,100,100,93.3,100,80,4.36
+37,Simple,List orders with revenue above 10000,SELECT * FROM data WHERE Revenue > 10000,SELECT * FROM data WHERE Revenue > 10000,TRUE,137,137,TRUE,100,100,100,100,100,100,4.07
+38,Simple,Show all orders handled by Fatima Noor,SELECT * FROM data WHERE Salesperson = 'Fatima Noor',SELECT * FROM data WHERE Salesperson = 'Fatima Noor',TRUE,62,62,TRUE,100,100,100,40,0,80,3.76
+39,Simple,Display the cheapest 5 products by unit price,SELECT * FROM data ORDER BY UnitPrice ASC LIMIT 5,SELECT Product FROM data ORDER BY UnitPrice LIMIT 5,TRUE,5,5,FALSE,0,100,5.9,50,0,100,3.69
+40,Simple,Show all installment payment orders,SELECT * FROM data WHERE PaymentMethod = 'Installment',SELECT * FROM data WHERE PaymentMethod = 'Installment',TRUE,196,196,TRUE,100,100,100,93.3,100,80,3.72
+41,Aggregation,What is the total sales by region?,"SELECT Region, SUM(TotalSales) FROM data GROUP BY Region","SELECT Region, SUM(TotalSales) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.01
+42,Aggregation,Show average unit price per product,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product","SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category",TRUE,4,10,FALSE,0,40,50,75,100,50,4.01
+43,Aggregation,Count the number of orders per category,"SELECT Category, COUNT(*) FROM data GROUP BY Category","SELECT Category, COUNT(*) FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,100,100,100,100,3.43
+44,Aggregation,Total revenue by year,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year","SELECT Year, SUM(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.6
+45,Aggregation,Maximum total sales in each region,"SELECT Region, MAX(TotalSales) FROM data GROUP BY Region","SELECT Region, MAX(TotalSales)
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,100,83.3,66.7,100,4.16
+46,Aggregation,What is the overall average rating?,SELECT AVG(Rating) FROM data,SELECT avg(Rating) FROM data,TRUE,1,1,TRUE,100,100,100,100,100,100,2.9
+47,Aggregation,Top 5 products by total revenue,"SELECT Product, SUM(Revenue) FROM data GROUP BY Product ORDER BY SUM(Revenue) DESC LIMIT 5","SELECT Product, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Product
+ORDER BY TotalRevenue DESC
+LIMIT 5",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.08
+48,Aggregation,Monthly total sales for 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,100,100,100,7.36
+49,Aggregation,How many orders per salesperson?,"SELECT Salesperson, COUNT(*) FROM data GROUP BY Salesperson","SELECT Salesperson, COUNT(OrderID) AS NumberOfOrders FROM data GROUP BY Salesperson",TRUE,15,15,TRUE,100,100,50,100,100,100,5.55
+50,Aggregation,Minimum and maximum unit price per category,"SELECT Category, MIN(UnitPrice), MAX(UnitPrice) FROM data GROUP BY Category","SELECT Category, MIN(UnitPrice) AS MinimumUnitPrice, MAX(UnitPrice) AS MaximumUnitPrice FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,33.3,100,100,100,6.11
+51,Aggregation,Total quantity sold by product,"SELECT Product, SUM(Quantity) FROM data GROUP BY Product","SELECT Product, SUM(Quantity) FROM data GROUP BY Product",TRUE,10,10,TRUE,100,100,100,100,100,100,3.85
+52,Aggregation,Average discount per payment method,"SELECT PaymentMethod, AVG(Discount) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod,AVG(Discount) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.35
+53,Aggregation,Total orders per quarter,"SELECT Quarter, COUNT(*) FROM data GROUP BY Quarter","SELECT
+  Quarter
+FROM data
+GROUP BY
+  Quarter",TRUE,4,4,FALSE,0,100,50,75,50,100,4.22
+54,Aggregation,Average rating by product,"SELECT Product, AVG(Rating) FROM data GROUP BY Product",SELECT avg(Rating) FROM data,TRUE,1,10,FALSE,0,10,50,50,50,50,3.22
+55,Aggregation,Sum of revenue per customer type,"SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType","SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType",TRUE,4,4,TRUE,100,100,100,100,100,100,4.09
+56,Aggregation,Count of distinct products per region,"SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.02
+57,Aggregation,Average quantity per order by region,"SELECT Region, AVG(Quantity) FROM data GROUP BY Region","SELECT Region, AVG(Quantity) AS AverageQuantity
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,50,66.7,100,100,4.83
+58,Aggregation,Top 3 salespersons by total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson ORDER BY SUM(Revenue) DESC LIMIT 3","SELECT Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Salesperson
+ORDER BY TotalRevenue DESC
+LIMIT 3",TRUE,3,3,TRUE,100,100,50,88.9,66.7,100,6.86
+59,Aggregation,Total sales per payment method,"SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.36
+60,Aggregation,Number of orders above 5000 in total sales,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,TRUE,1,1,TRUE,100,100,100,83.3,50,100,5.05
+61,Aggregation,Average revenue per year,"SELECT Year, AVG(Revenue) FROM data GROUP BY Year","SELECT Year, AVG(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.95
+62,Aggregation,Highest rated product on average,"SELECT Product, AVG(Rating) FROM data GROUP BY Product ORDER BY AVG(Rating) DESC LIMIT 1",SELECT Product FROM data ORDER BY Rating DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,66.7,0,100,3.81
+63,Aggregation,Total number of corporate orders per region,"SELECT Region, COUNT(*) FROM data WHERE CustomerType = 'Corporate' GROUP BY Region","SELECT
+  Region,
+  COUNT(OrderID)
+FROM data
+WHERE
+  CustomerType = 'Corporate'
+GROUP BY
+  Region",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.88
+64,Aggregation,Lowest 5 products by average unit price,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product ORDER BY AVG(UnitPrice) ASC LIMIT 5",SELECT Product FROM data ORDER BY UnitPrice DESC LIMIT 5,TRUE,5,5,FALSE,0,100,50,62.5,0,100,4.28
+65,Aggregation,How many distinct salespersons per region?,"SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.92
+66,Aggregation,Total discount amount by product,"SELECT Product, SUM(Discount * TotalSales) FROM data GROUP BY Product","SELECT
+  SUM(Discount)
+FROM data",TRUE,1,10,FALSE,0,10,0,50,50,50,3.8
+67,Aggregation,Average total sales per month across all years,"SELECT Month, AVG(TotalSales) FROM data GROUP BY Month","SELECT
+  Month,
+  AVG(TotalSales)
+FROM data
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,66.7,66.7,66.7,5.77
+68,Aggregation,Count of orders per year and quarter,"SELECT Year, Quarter, COUNT(*) FROM data GROUP BY Year, Quarter","SELECT
+  Year,
+  Quarter,
+  COUNT(OrderID)
+FROM data
+GROUP BY
+  Year,
+  Quarter",TRUE,12,12,TRUE,100,100,66.7,100,100,100,6.67
+69,Aggregation,Total revenue from electronics category,SELECT SUM(Revenue) FROM data WHERE Category = 'Electronics',SELECT sum(TotalSales) FROM data WHERE Category = 'Electronics',TRUE,1,1,FALSE,0,100,0,87.5,100,50,4.34
+70,Aggregation,Products with more than 100 orders,"SELECT Product, COUNT(*) FROM data GROUP BY Product HAVING COUNT(*) > 100",SELECT Product FROM data WHERE Product IN (SELECT Product FROM data GROUP BY Product HAVING COUNT(*) > 100),TRUE,538,5,FALSE,0,0,50,100,100,100,6.71
+71,Complex,Show total sales by region and product,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product",TRUE,50,50,TRUE,100,100,66.7,100,100,100,6.61
+72,Complex,Products with above-average revenue,SELECT * FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),SELECT Product FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),TRUE,316,316,FALSE,0,100,5.9,100,100,100,4.34
+73,Complex,Region with the highest total revenue,"SELECT Region, SUM(Revenue) FROM data GROUP BY Region ORDER BY SUM(Revenue) DESC LIMIT 1",SELECT Region FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,33.3,0,50,3.65
+74,Complex,Monthly sales trend for laptops in 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Product = 'Laptop' AND Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024 AND Product LIKE '%Laptop%'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,11,11,TRUE,100,100,100,100,100,100,8.67
+75,Complex,Compare total revenue by customer type per year,"SELECT Year, CustomerType, SUM(Revenue) FROM data GROUP BY Year, CustomerType","SELECT CustomerType, Year, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY CustomerType, Year
+ORDER BY Year, TotalRevenue DESC",TRUE,12,12,FALSE,100,100,66.7,83.3,66.7,100,7.13
+76,Complex,Top 3 regions by average order rating,"SELECT Region, AVG(Rating) FROM data GROUP BY Region ORDER BY AVG(Rating) DESC LIMIT 3",SELECT Region FROM data ORDER BY AVG(Rating) DESC LIMIT 3,FALSE,0,3,FALSE,0,0,0,37.8,33.3,100,4.01
+77,Complex,Percentage of total revenue each product contributes,"SELECT Product, ROUND(SUM(Revenue) * 100.0 / (SELECT SUM(Revenue) FROM data), 2) FROM data GROUP BY Product","SELECT
+  Product,
+  TotalSales * 1.0 / (
+    SELECT
+      SUM(TotalSales)
+    FROM data
+  ) AS PercentageOfTotalRevenue
+FROM data
+GROUP BY
+  Product",TRUE,10,10,FALSE,0,100,50,58.3,66.7,50,9.59
+78,Complex,Salespersons who generated above-average total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson HAVING SUM(Revenue) > (SELECT AVG(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson))",SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,16.7,0,50,4.16
+79,Complex,Quarterly revenue trend for each region,"SELECT Region, Quarter, SUM(Revenue) FROM data GROUP BY Region, Quarter ORDER BY Region, Quarter","SELECT
+  Year,
+  Quarter,
+  SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY
+  Year,
+  Quarter
+ORDER BY
+  Year,
+  Quarter",TRUE,12,20,FALSE,0,60,33.3,83.3,100,66.7,8.77
+80,Complex,Products with highest sales in each region,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product ORDER BY Region, SUM(TotalSales) DESC","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product
+ORDER BY TotalSales DESC",TRUE,50,50,TRUE,100,100,66.7,66.7,50,100,7.56
+81,Complex,Year-over-year revenue growth,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year ORDER BY Year","SELECT
+  Year,
+  Revenue,
+  LAG(Revenue, 1, 0) OVER (ORDER BY Year) AS PreviousYearRevenue
+FROM data
+ORDER BY
+  Year",TRUE,1000,3,FALSE,50,0,50,100,100,100,10.27
+82,Complex,Average revenue per order for each product category by year,"SELECT Year, Category, AVG(Revenue) FROM data GROUP BY Year, Category","SELECT
+  Category,
+  Year,
+  AVG(Revenue)
+FROM data
+GROUP BY
+  Category,
+  Year",TRUE,12,12,FALSE,100,100,100,58.3,100,75,8.03
+83,Complex,Find salespersons who sold all product categories,SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(DISTINCT Category) = (SELECT COUNT(DISTINCT Category) FROM data),SELECT Salesperson FROM data WHERE Salesperson IN (SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(Category) = (SELECT COUNT(DISTINCT Category) FROM data)),TRUE,0,15,FALSE,50,0,100,65,100,50,9.12
+84,Complex,Products sold in every region,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT Region) = (SELECT COUNT(DISTINCT Region) FROM data),SELECT DISTINCT Region FROM data,TRUE,5,10,FALSE,50,50,0,75,100,50,3.13
+85,Complex,Monthly trend of average discount rate in 2024,"SELECT Month, AVG(Discount) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  STRFTIME('%Y-%m', Date) AS Month,
+  AVG(Discount) AS AverageDiscountRate
+FROM data
+WHERE
+  STRFTIME('%Y', Date) = '2024'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,12,12,FALSE,100,100,50,100,100,100,13.6
+86,Complex,Compare cash vs credit card payments by total revenue and average rating,"SELECT PaymentMethod, SUM(Revenue), AVG(Rating) FROM data WHERE PaymentMethod IN ('Cash', 'Credit Card') GROUP BY PaymentMethod","SELECT
+  PaymentMethod,
+  SUM(TotalSales) AS TotalRevenue,
+  AVG(Rating) AS AverageRating
+FROM data
+GROUP BY
+  PaymentMethod",TRUE,5,2,FALSE,0,0,33.3,58.3,75,50,9.14
+87,Complex,Rank products by total sales within each region,"SELECT Region, Product, SUM(TotalSales), RANK() OVER (PARTITION BY Region ORDER BY SUM(TotalSales) DESC) FROM data GROUP BY Region, Product","SELECT
+  Product,
+  SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY
+  Product,
+  Region
+ORDER BY
+  TotalSales DESC",TRUE,50,50,FALSE,0,100,25,100,100,100,8.69
+88,Complex,Running total of revenue by date,"SELECT Date, Revenue, SUM(Revenue) OVER (ORDER BY Date) FROM data","SELECT
+  Date,
+  SUM(Revenue) OVER (ORDER BY Date) AS RunningTotalRevenue
+FROM data",TRUE,1000,1000,FALSE,0,100,33.3,75,50,100,6.01
+89,Complex,Categories where average unit price exceeds 500,"SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500",SELECT Category FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500,TRUE,1,1,FALSE,0,100,50,66.7,100,100,5.19
+90,Complex,Top salesperson in each region by revenue,"SELECT Region, Salesperson, SUM(Revenue) FROM data GROUP BY Region, Salesperson ORDER BY Region, SUM(Revenue) DESC","SELECT Region, Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Region, Salesperson
+ORDER BY Region, TotalRevenue DESC",TRUE,75,75,TRUE,100,100,66.7,75,50,100,9.79
+91,Complex,Orders where total sales in top 10 percent,SELECT * FROM data WHERE TotalSales >= (SELECT TotalSales FROM data ORDER BY TotalSales DESC LIMIT 1 OFFSET (SELECT COUNT(*)/10 FROM data)),"SELECT *
+FROM data
+WHERE TotalSales >= (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY TotalSales) FROM data)",FALSE,0,101,FALSE,0,0,0,15.6,0,100,8.16
+92,Complex,Product category revenue split by online vs walk-in customers,"SELECT Category, CustomerType, SUM(Revenue) FROM data WHERE CustomerType IN ('Online', 'Walk-in') GROUP BY Category, CustomerType","SELECT
+  Category,
+  SUM(CASE WHEN CustomerType = 'Online' THEN Revenue ELSE 0 END) AS OnlineRevenue,
+  SUM(CASE WHEN CustomerType = 'Walk-In' THEN Revenue ELSE 0 END) AS WalkInRevenue
+FROM data
+GROUP BY
+  Category",TRUE,4,8,FALSE,0,50,33.3,80.6,100,66.7,15.9
+93,Complex,Show moving average of daily revenue over 7-day window,"SELECT Date, Revenue, AVG(Revenue) OVER (ORDER BY Date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) FROM data","SELECT
+  Date,
+  Revenue,
+  AVG(Revenue) OVER (ORDER BY Date ASC ROWS BETWEEN 6 PRECEDING AND 6 FOLLOWING) AS MovingAverageRevenue
+FROM data",TRUE,1000,1000,FALSE,100,100,66.7,100,100,100,10.68
+94,Complex,Months with above-average total orders,"SELECT Month, COUNT(*) FROM data GROUP BY Month HAVING COUNT(*) > (SELECT COUNT(*) / 12 FROM data)",SELECT Month FROM data GROUP BY Month ORDER BY COUNT(OrderID) DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,33.3,0,100,19.68
+95,Complex,Revenue difference between highest and lowest performing salesperson,SELECT MAX(total) - MIN(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson),"SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1)
+UNION
+SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales ASC LIMIT 1)",TRUE,2,1,FALSE,0,0,0,50,0,50,48.07
+96,Complex,Show regions where all products have been sold,SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),TRUE,5,5,TRUE,100,100,100,66.7,100,100,7.72
+97,Complex,Average order value trend by quarter and year,"SELECT Year, Quarter, AVG(TotalSales) FROM data GROUP BY Year, Quarter ORDER BY Year, Quarter","SELECT
+  STRFTIME('%Y', Date) AS Year,
+  STRFTIME('%m', Date) AS Month,
+  STRFTIME('%Q', Date) AS Quarter,
+  AVG(TotalSales) AS AverageOrderValue
+FROM data
+GROUP BY Year, Month, Quarter
+ORDER BY Year, Month, Quarter",TRUE,36,12,FALSE,0,0,66.7,100,100,100,16.93
+98,Complex,Cumulative sum of quantity sold per product ordered by date,"SELECT Product, Date, Quantity, SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) FROM data","SELECT
+  Date,
+  Product,
+  SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) AS CumulativeQuantity
+FROM data",TRUE,1000,1000,FALSE,0,100,50,75,50,100,8.56
+99,Complex,Products that are only sold through online customers,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT CustomerType) = 1 AND MAX(CustomerType) = 'Online',"SELECT DISTINCT Product
+FROM data
+WHERE CustomerType = 'Online'",TRUE,10,0,FALSE,50,0,100,100,100,100,150.01
+100,Complex,Compare revenue per unit across all products and rank them,"SELECT Product, SUM(Revenue)/SUM(Quantity) as RevenuePerUnit FROM data GROUP BY Product ORDER BY RevenuePerUnit DESC","SELECT
+  Product,
+  Revenue / Quantity AS RevenuePerUnit,
+  RANK(Revenue / Quantity) OVER (ORDER BY Revenue / Quantity DESC) AS RevenueRank
+FROM data",FALSE,0,10,FALSE,0,0,0,26.7,0,100,34.91
+1,Simple,Show all sales from the North region,SELECT * FROM data WHERE Region = 'North',SELECT * FROM data WHERE Region = 'North',TRUE,206,206,TRUE,100,100,100,100,100,100,28.68
+2,Simple,List all products sold in 2024,SELECT * FROM data WHERE Year = 2024,"SELECT DISTINCT Product
+FROM data
+WHERE Year = 2024",TRUE,10,346,FALSE,0,2.9,5.9,100,100,100,5.43
+3,Simple,Show orders with total sales above 5000,SELECT * FROM data WHERE TotalSales > 5000,SELECT * FROM data WHERE TotalSales > 5000,TRUE,344,344,TRUE,100,100,100,66.7,0,100,4.73
+4,Simple,Display all laptop orders,SELECT * FROM data WHERE Product = 'Laptop',SELECT * FROM data WHERE Product = 'Laptop',TRUE,86,86,TRUE,100,100,100,93.3,100,80,3.49
+5,Simple,List the first 10 records,SELECT * FROM data LIMIT 10,SELECT * FROM data LIMIT 10,TRUE,10,10,TRUE,100,100,100,93.3,100,80,3.35
+6,Simple,Show all orders paid by credit card,SELECT * FROM data WHERE PaymentMethod = 'Credit Card',SELECT * FROM data WHERE PaymentMethod = 'Credit Card',TRUE,199,199,TRUE,100,100,100,43.3,0,80,3.91
+7,Simple,What are the distinct product names?,SELECT DISTINCT Product FROM data,SELECT DISTINCT Product FROM data,TRUE,10,10,TRUE,100,100,100,100,100,100,2.74
+8,Simple,Show orders from Q1,SELECT * FROM data WHERE Quarter = 'Q1',SELECT * FROM data WHERE Quarter = 'Q1',TRUE,222,222,TRUE,100,100,100,95,100,80,3.9
+9,Simple,List all corporate customer orders,SELECT * FROM data WHERE CustomerType = 'Corporate',SELECT * FROM data WHERE CustomerType = 'Corporate',TRUE,235,235,TRUE,100,100,100,93.3,100,80,4.01
+10,Simple,Show orders with discount greater than 0.20,SELECT * FROM data WHERE Discount > 0.20,SELECT * FROM data WHERE Discount > 0.20,TRUE,299,299,TRUE,100,100,100,100,100,100,4.16
+11,Simple,Display all orders by Ali Hassan,SELECT * FROM data WHERE Salesperson = 'Ali Hassan',SELECT * FROM data WHERE CustomerType = 'Ali Hassan',TRUE,0,69,FALSE,0,0,100,30,0,80,3.84
+12,Simple,Show all electronics category products,SELECT * FROM data WHERE Category = 'Electronics',SELECT * FROM data WHERE Category = 'Electronics',TRUE,469,469,TRUE,100,100,100,83.3,100,50,3.51
+13,Simple,List orders from January,SELECT * FROM data WHERE Month = 'Jan',SELECT * FROM data WHERE Month = 'January',TRUE,0,82,FALSE,0,0,100,72.5,100,80,3.53
+14,Simple,Show all orders with rating above 4,SELECT * FROM data WHERE Rating > 4,SELECT * FROM data WHERE Rating > 4,TRUE,269,269,TRUE,100,100,100,100,100,100,3.4
+15,Simple,Display orders with quantity less than 5,SELECT * FROM data WHERE Quantity < 5,SELECT * FROM data WHERE Quantity < 5,TRUE,185,185,TRUE,100,100,100,100,100,100,3.43
+16,Simple,Show all regions in the dataset,SELECT DISTINCT Region FROM data,SELECT DISTINCT Region FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.74
+17,Simple,List all payment methods used,SELECT DISTINCT PaymentMethod FROM data,SELECT DISTINCT PaymentMethod FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.94
+18,Simple,Show orders from the East region in 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,TRUE,68,68,TRUE,100,100,100,100,100,100,5.83
+19,Simple,Display smartwatch orders with quantity above 10,SELECT * FROM data WHERE Product = 'Smartwatch' AND Quantity > 10,SELECT * FROM data WHERE Product = 'smartwatch' AND Quantity > 10,TRUE,0,54,FALSE,0,0,100,83.8,100,100,5.15
+20,Simple,List all orders between unit price 100 and 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,TRUE,452,452,TRUE,100,100,100,100,100,100,5.57
+21,Simple,Show the most recent 20 orders,SELECT * FROM data ORDER BY Date DESC LIMIT 20,"SELECT *
+FROM data
+ORDER BY Date DESC
+LIMIT 20",TRUE,20,20,TRUE,100,100,100,90,100,80,4.71
+22,Simple,List all salespersons in the dataset,SELECT DISTINCT Salesperson FROM data,SELECT DISTINCT Salesperson FROM data,TRUE,15,15,TRUE,100,100,100,100,100,100,3.08
+23,Simple,Show orders where revenue is greater than total sales,SELECT * FROM data WHERE Revenue > TotalSales,"SELECT *
+FROM data
+WHERE Revenue > TotalSales",TRUE,0,0,TRUE,100,100,100,56.7,0,100,4.12
+24,Simple,Display all customer types available,SELECT DISTINCT CustomerType FROM data,SELECT DISTINCT CustomerType FROM data,TRUE,4,4,TRUE,100,100,100,100,100,100,3.13
+25,Simple,Show all camera orders from the South region,SELECT * FROM data WHERE Product = 'Camera' AND Region = 'South',SELECT * FROM data WHERE Region = 'South' AND Product LIKE '%Camera%',TRUE,22,22,TRUE,100,100,100,100,100,100,4.72
+26,Simple,List orders where discount is zero,SELECT * FROM data WHERE Discount = 0,SELECT * FROM data WHERE Discount = 0,TRUE,23,23,TRUE,100,100,100,100,100,100,3.37
+27,Simple,Show all wearables category orders,SELECT * FROM data WHERE Category = 'Wearables',"SELECT *
+FROM data
+WHERE Category = 'Wearables'",TRUE,98,98,TRUE,100,100,100,100,100,100,3.99
+28,Simple,Display orders from 2022 Q4,SELECT * FROM data WHERE Year = 2022 AND Quarter = 'Q4',SELECT * FROM data WHERE Year = 2022 AND Quarter = 4,TRUE,0,81,FALSE,0,0,100,72.5,100,80,4.82
+29,Simple,Show all orders sorted by unit price,SELECT * FROM data ORDER BY UnitPrice,SELECT * FROM data ORDER BY UnitPrice,TRUE,1000,1000,TRUE,100,100,100,50,0,100,3.45
+30,Simple,List all returning customer orders in the West region,SELECT * FROM data WHERE CustomerType = 'Returning' AND Region = 'West',SELECT * FROM data WHERE Region = 'West',TRUE,188,45,FALSE,0,0,100,91.7,100,100,3.68
+31,Simple,Show all orders with rating exactly 5,SELECT * FROM data WHERE Rating = 5.0,SELECT * FROM data WHERE Rating = 5,TRUE,17,17,TRUE,100,100,100,100,100,100,3.48
+32,Simple,Display all office category products,SELECT * FROM data WHERE Category = 'Office',"SELECT *
+FROM data
+WHERE Category = 'Office'",TRUE,111,111,TRUE,100,100,100,83.3,100,50,3.91
+33,Simple,List online customer orders paid by online transfer,SELECT * FROM data WHERE CustomerType = 'Online' AND PaymentMethod = 'Online Transfer',"SELECT *
+FROM data
+WHERE PaymentMethod = 'Online Transfer'",TRUE,222,59,FALSE,0,0,100,51.7,0,80,4.37
+34,Simple,Show orders from March 2023,SELECT * FROM data WHERE Month = 'Mar' AND Year = 2023,SELECT * FROM data WHERE Month = 'March' AND Year = 2023,TRUE,0,22,FALSE,0,0,100,72.5,100,80,5.09
+35,Simple,Display all distinct categories in the dataset,SELECT DISTINCT Category FROM data,SELECT DISTINCT Category FROM data,TRUE,4,4,TRUE,100,100,100,90,100,80,2.81
+36,Simple,Show all monitor and keyboard orders,"SELECT * FROM data WHERE Product IN ('Monitor', 'Keyboard')",SELECT * FROM data WHERE Product LIKE '%monitor%' OR Product LIKE '%keyboard%',TRUE,185,185,TRUE,100,100,100,93.3,100,80,4.36
+37,Simple,List orders with revenue above 10000,SELECT * FROM data WHERE Revenue > 10000,SELECT * FROM data WHERE Revenue > 10000,TRUE,137,137,TRUE,100,100,100,100,100,100,4.07
+38,Simple,Show all orders handled by Fatima Noor,SELECT * FROM data WHERE Salesperson = 'Fatima Noor',SELECT * FROM data WHERE Salesperson = 'Fatima Noor',TRUE,62,62,TRUE,100,100,100,40,0,80,3.76
+39,Simple,Display the cheapest 5 products by unit price,SELECT * FROM data ORDER BY UnitPrice ASC LIMIT 5,SELECT Product FROM data ORDER BY UnitPrice LIMIT 5,TRUE,5,5,FALSE,0,100,5.9,50,0,100,3.69
+40,Simple,Show all installment payment orders,SELECT * FROM data WHERE PaymentMethod = 'Installment',SELECT * FROM data WHERE PaymentMethod = 'Installment',TRUE,196,196,TRUE,100,100,100,93.3,100,80,3.72
+41,Aggregation,What is the total sales by region?,"SELECT Region, SUM(TotalSales) FROM data GROUP BY Region","SELECT Region, SUM(TotalSales) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.01
+42,Aggregation,Show average unit price per product,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product","SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category",TRUE,4,10,FALSE,0,40,50,75,100,50,4.01
+43,Aggregation,Count the number of orders per category,"SELECT Category, COUNT(*) FROM data GROUP BY Category","SELECT Category, COUNT(*) FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,100,100,100,100,3.43
+44,Aggregation,Total revenue by year,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year","SELECT Year, SUM(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.6
+45,Aggregation,Maximum total sales in each region,"SELECT Region, MAX(TotalSales) FROM data GROUP BY Region","SELECT Region, MAX(TotalSales)
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,100,83.3,66.7,100,4.16
+46,Aggregation,What is the overall average rating?,SELECT AVG(Rating) FROM data,SELECT avg(Rating) FROM data,TRUE,1,1,TRUE,100,100,100,100,100,100,2.9
+47,Aggregation,Top 5 products by total revenue,"SELECT Product, SUM(Revenue) FROM data GROUP BY Product ORDER BY SUM(Revenue) DESC LIMIT 5","SELECT Product, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Product
+ORDER BY TotalRevenue DESC
+LIMIT 5",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.08
+48,Aggregation,Monthly total sales for 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,100,100,100,7.36
+49,Aggregation,How many orders per salesperson?,"SELECT Salesperson, COUNT(*) FROM data GROUP BY Salesperson","SELECT Salesperson, COUNT(OrderID) AS NumberOfOrders FROM data GROUP BY Salesperson",TRUE,15,15,TRUE,100,100,50,100,100,100,5.55
+50,Aggregation,Minimum and maximum unit price per category,"SELECT Category, MIN(UnitPrice), MAX(UnitPrice) FROM data GROUP BY Category","SELECT Category, MIN(UnitPrice) AS MinimumUnitPrice, MAX(UnitPrice) AS MaximumUnitPrice FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,33.3,100,100,100,6.11
+51,Aggregation,Total quantity sold by product,"SELECT Product, SUM(Quantity) FROM data GROUP BY Product","SELECT Product, SUM(Quantity) FROM data GROUP BY Product",TRUE,10,10,TRUE,100,100,100,100,100,100,3.85
+52,Aggregation,Average discount per payment method,"SELECT PaymentMethod, AVG(Discount) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod,AVG(Discount) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.35
+53,Aggregation,Total orders per quarter,"SELECT Quarter, COUNT(*) FROM data GROUP BY Quarter","SELECT
+  Quarter
+FROM data
+GROUP BY
+  Quarter",TRUE,4,4,FALSE,0,100,50,75,50,100,4.22
+54,Aggregation,Average rating by product,"SELECT Product, AVG(Rating) FROM data GROUP BY Product",SELECT avg(Rating) FROM data,TRUE,1,10,FALSE,0,10,50,50,50,50,3.22
+55,Aggregation,Sum of revenue per customer type,"SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType","SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType",TRUE,4,4,TRUE,100,100,100,100,100,100,4.09
+56,Aggregation,Count of distinct products per region,"SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.02
+57,Aggregation,Average quantity per order by region,"SELECT Region, AVG(Quantity) FROM data GROUP BY Region","SELECT Region, AVG(Quantity) AS AverageQuantity
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,50,66.7,100,100,4.83
+58,Aggregation,Top 3 salespersons by total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson ORDER BY SUM(Revenue) DESC LIMIT 3","SELECT Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Salesperson
+ORDER BY TotalRevenue DESC
+LIMIT 3",TRUE,3,3,TRUE,100,100,50,88.9,66.7,100,6.86
+59,Aggregation,Total sales per payment method,"SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.36
+60,Aggregation,Number of orders above 5000 in total sales,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,TRUE,1,1,TRUE,100,100,100,83.3,50,100,5.05
+61,Aggregation,Average revenue per year,"SELECT Year, AVG(Revenue) FROM data GROUP BY Year","SELECT Year, AVG(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.95
+62,Aggregation,Highest rated product on average,"SELECT Product, AVG(Rating) FROM data GROUP BY Product ORDER BY AVG(Rating) DESC LIMIT 1",SELECT Product FROM data ORDER BY Rating DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,66.7,0,100,3.81
+63,Aggregation,Total number of corporate orders per region,"SELECT Region, COUNT(*) FROM data WHERE CustomerType = 'Corporate' GROUP BY Region","SELECT
+  Region,
+  COUNT(OrderID)
+FROM data
+WHERE
+  CustomerType = 'Corporate'
+GROUP BY
+  Region",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.88
+64,Aggregation,Lowest 5 products by average unit price,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product ORDER BY AVG(UnitPrice) ASC LIMIT 5",SELECT Product FROM data ORDER BY UnitPrice DESC LIMIT 5,TRUE,5,5,FALSE,0,100,50,62.5,0,100,4.28
+65,Aggregation,How many distinct salespersons per region?,"SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.92
+66,Aggregation,Total discount amount by product,"SELECT Product, SUM(Discount * TotalSales) FROM data GROUP BY Product","SELECT
+  SUM(Discount)
+FROM data",TRUE,1,10,FALSE,0,10,0,50,50,50,3.8
+67,Aggregation,Average total sales per month across all years,"SELECT Month, AVG(TotalSales) FROM data GROUP BY Month","SELECT
+  Month,
+  AVG(TotalSales)
+FROM data
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,66.7,66.7,66.7,5.77
+68,Aggregation,Count of orders per year and quarter,"SELECT Year, Quarter, COUNT(*) FROM data GROUP BY Year, Quarter","SELECT
+  Year,
+  Quarter,
+  COUNT(OrderID)
+FROM data
+GROUP BY
+  Year,
+  Quarter",TRUE,12,12,TRUE,100,100,66.7,100,100,100,6.67
+69,Aggregation,Total revenue from electronics category,SELECT SUM(Revenue) FROM data WHERE Category = 'Electronics',SELECT sum(TotalSales) FROM data WHERE Category = 'Electronics',TRUE,1,1,FALSE,0,100,0,87.5,100,50,4.34
+70,Aggregation,Products with more than 100 orders,"SELECT Product, COUNT(*) FROM data GROUP BY Product HAVING COUNT(*) > 100",SELECT Product FROM data WHERE Product IN (SELECT Product FROM data GROUP BY Product HAVING COUNT(*) > 100),TRUE,538,5,FALSE,0,0,50,100,100,100,6.71
+71,Complex,Show total sales by region and product,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product",TRUE,50,50,TRUE,100,100,66.7,100,100,100,6.61
+72,Complex,Products with above-average revenue,SELECT * FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),SELECT Product FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),TRUE,316,316,FALSE,0,100,5.9,100,100,100,4.34
+73,Complex,Region with the highest total revenue,"SELECT Region, SUM(Revenue) FROM data GROUP BY Region ORDER BY SUM(Revenue) DESC LIMIT 1",SELECT Region FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,33.3,0,50,3.65
+74,Complex,Monthly sales trend for laptops in 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Product = 'Laptop' AND Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024 AND Product LIKE '%Laptop%'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,11,11,TRUE,100,100,100,100,100,100,8.67
+75,Complex,Compare total revenue by customer type per year,"SELECT Year, CustomerType, SUM(Revenue) FROM data GROUP BY Year, CustomerType","SELECT CustomerType, Year, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY CustomerType, Year
+ORDER BY Year, TotalRevenue DESC",TRUE,12,12,FALSE,100,100,66.7,83.3,66.7,100,7.13
+76,Complex,Top 3 regions by average order rating,"SELECT Region, AVG(Rating) FROM data GROUP BY Region ORDER BY AVG(Rating) DESC LIMIT 3",SELECT Region FROM data ORDER BY AVG(Rating) DESC LIMIT 3,FALSE,0,3,FALSE,0,0,0,37.8,33.3,100,4.01
+77,Complex,Percentage of total revenue each product contributes,"SELECT Product, ROUND(SUM(Revenue) * 100.0 / (SELECT SUM(Revenue) FROM data), 2) FROM data GROUP BY Product","SELECT
+  Product,
+  TotalSales * 1.0 / (
+    SELECT
+      SUM(TotalSales)
+    FROM data
+  ) AS PercentageOfTotalRevenue
+FROM data
+GROUP BY
+  Product",TRUE,10,10,FALSE,0,100,50,58.3,66.7,50,9.59
+78,Complex,Salespersons who generated above-average total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson HAVING SUM(Revenue) > (SELECT AVG(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson))",SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,16.7,0,50,4.16
+79,Complex,Quarterly revenue trend for each region,"SELECT Region, Quarter, SUM(Revenue) FROM data GROUP BY Region, Quarter ORDER BY Region, Quarter","SELECT
+  Year,
+  Quarter,
+  SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY
+  Year,
+  Quarter
+ORDER BY
+  Year,
+  Quarter",TRUE,12,20,FALSE,0,60,33.3,83.3,100,66.7,8.77
+80,Complex,Products with highest sales in each region,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product ORDER BY Region, SUM(TotalSales) DESC","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product
+ORDER BY TotalSales DESC",TRUE,50,50,TRUE,100,100,66.7,66.7,50,100,7.56
+81,Complex,Year-over-year revenue growth,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year ORDER BY Year","SELECT
+  Year,
+  Revenue,
+  LAG(Revenue, 1, 0) OVER (ORDER BY Year) AS PreviousYearRevenue
+FROM data
+ORDER BY
+  Year",TRUE,1000,3,FALSE,50,0,50,100,100,100,10.27
+82,Complex,Average revenue per order for each product category by year,"SELECT Year, Category, AVG(Revenue) FROM data GROUP BY Year, Category","SELECT
+  Category,
+  Year,
+  AVG(Revenue)
+FROM data
+GROUP BY
+  Category,
+  Year",TRUE,12,12,FALSE,100,100,100,58.3,100,75,8.03
+83,Complex,Find salespersons who sold all product categories,SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(DISTINCT Category) = (SELECT COUNT(DISTINCT Category) FROM data),SELECT Salesperson FROM data WHERE Salesperson IN (SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(Category) = (SELECT COUNT(DISTINCT Category) FROM data)),TRUE,0,15,FALSE,50,0,100,65,100,50,9.12
+84,Complex,Products sold in every region,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT Region) = (SELECT COUNT(DISTINCT Region) FROM data),SELECT DISTINCT Region FROM data,TRUE,5,10,FALSE,50,50,0,75,100,50,3.13
+85,Complex,Monthly trend of average discount rate in 2024,"SELECT Month, AVG(Discount) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  STRFTIME('%Y-%m', Date) AS Month,
+  AVG(Discount) AS AverageDiscountRate
+FROM data
+WHERE
+  STRFTIME('%Y', Date) = '2024'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,12,12,FALSE,100,100,50,100,100,100,13.6
+86,Complex,Compare cash vs credit card payments by total revenue and average rating,"SELECT PaymentMethod, SUM(Revenue), AVG(Rating) FROM data WHERE PaymentMethod IN ('Cash', 'Credit Card') GROUP BY PaymentMethod","SELECT
+  PaymentMethod,
+  SUM(TotalSales) AS TotalRevenue,
+  AVG(Rating) AS AverageRating
+FROM data
+GROUP BY
+  PaymentMethod",TRUE,5,2,FALSE,0,0,33.3,58.3,75,50,9.14
+87,Complex,Rank products by total sales within each region,"SELECT Region, Product, SUM(TotalSales), RANK() OVER (PARTITION BY Region ORDER BY SUM(TotalSales) DESC) FROM data GROUP BY Region, Product","SELECT
+  Product,
+  SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY
+  Product,
+  Region
+ORDER BY
+  TotalSales DESC",TRUE,50,50,FALSE,0,100,25,100,100,100,8.69
+88,Complex,Running total of revenue by date,"SELECT Date, Revenue, SUM(Revenue) OVER (ORDER BY Date) FROM data","SELECT
+  Date,
+  SUM(Revenue) OVER (ORDER BY Date) AS RunningTotalRevenue
+FROM data",TRUE,1000,1000,FALSE,0,100,33.3,75,50,100,6.01
+89,Complex,Categories where average unit price exceeds 500,"SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500",SELECT Category FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500,TRUE,1,1,FALSE,0,100,50,66.7,100,100,5.19
+90,Complex,Top salesperson in each region by revenue,"SELECT Region, Salesperson, SUM(Revenue) FROM data GROUP BY Region, Salesperson ORDER BY Region, SUM(Revenue) DESC","SELECT Region, Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Region, Salesperson
+ORDER BY Region, TotalRevenue DESC",TRUE,75,75,TRUE,100,100,66.7,75,50,100,9.79
+91,Complex,Orders where total sales in top 10 percent,SELECT * FROM data WHERE TotalSales >= (SELECT TotalSales FROM data ORDER BY TotalSales DESC LIMIT 1 OFFSET (SELECT COUNT(*)/10 FROM data)),"SELECT *
+FROM data
+WHERE TotalSales >= (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY TotalSales) FROM data)",FALSE,0,101,FALSE,0,0,0,15.6,0,100,8.16
+92,Complex,Product category revenue split by online vs walk-in customers,"SELECT Category, CustomerType, SUM(Revenue) FROM data WHERE CustomerType IN ('Online', 'Walk-in') GROUP BY Category, CustomerType","SELECT
+  Category,
+  SUM(CASE WHEN CustomerType = 'Online' THEN Revenue ELSE 0 END) AS OnlineRevenue,
+  SUM(CASE WHEN CustomerType = 'Walk-In' THEN Revenue ELSE 0 END) AS WalkInRevenue
+FROM data
+GROUP BY
+  Category",TRUE,4,8,FALSE,0,50,33.3,80.6,100,66.7,15.9
+93,Complex,Show moving average of daily revenue over 7-day window,"SELECT Date, Revenue, AVG(Revenue) OVER (ORDER BY Date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) FROM data","SELECT
+  Date,
+  Revenue,
+  AVG(Revenue) OVER (ORDER BY Date ASC ROWS BETWEEN 6 PRECEDING AND 6 FOLLOWING) AS MovingAverageRevenue
+FROM data",TRUE,1000,1000,FALSE,100,100,66.7,100,100,100,10.68
+94,Complex,Months with above-average total orders,"SELECT Month, COUNT(*) FROM data GROUP BY Month HAVING COUNT(*) > (SELECT COUNT(*) / 12 FROM data)",SELECT Month FROM data GROUP BY Month ORDER BY COUNT(OrderID) DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,33.3,0,100,19.68
+95,Complex,Revenue difference between highest and lowest performing salesperson,SELECT MAX(total) - MIN(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson),"SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1)
+UNION
+SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales ASC LIMIT 1)",TRUE,2,1,FALSE,0,0,0,50,0,50,48.07
+96,Complex,Show regions where all products have been sold,SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),TRUE,5,5,TRUE,100,100,100,66.7,100,100,7.72
+97,Complex,Average order value trend by quarter and year,"SELECT Year, Quarter, AVG(TotalSales) FROM data GROUP BY Year, Quarter ORDER BY Year, Quarter","SELECT
+  STRFTIME('%Y', Date) AS Year,
+  STRFTIME('%m', Date) AS Month,
+  STRFTIME('%Q', Date) AS Quarter,
+  AVG(TotalSales) AS AverageOrderValue
+FROM data
+GROUP BY Year, Month, Quarter
+ORDER BY Year, Month, Quarter",TRUE,36,12,FALSE,0,0,66.7,100,100,100,16.93
+98,Complex,Cumulative sum of quantity sold per product ordered by date,"SELECT Product, Date, Quantity, SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) FROM data","SELECT
+  Date,
+  Product,
+  SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) AS CumulativeQuantity
+FROM data",TRUE,1000,1000,FALSE,0,100,50,75,50,100,8.56
+99,Complex,Products that are only sold through online customers,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT CustomerType) = 1 AND MAX(CustomerType) = 'Online',"SELECT DISTINCT Product
+FROM data
+WHERE CustomerType = 'Online'",TRUE,10,0,FALSE,50,0,100,100,100,100,150.01
+100,Complex,Compare revenue per unit across all products and rank them,"SELECT Product, SUM(Revenue)/SUM(Quantity) as RevenuePerUnit FROM data GROUP BY Product ORDER BY RevenuePerUnit DESC","SELECT
+  Product,
+  Revenue / Quantity AS RevenuePerUnit,
+  RANK(Revenue / Quantity) OVER (ORDER BY Revenue / Quantity DESC) AS RevenueRank
+FROM data",FALSE,0,10,FALSE,0,0,0,26.7,0,100,34.91
+1,Simple,Show all sales from the North region,SELECT * FROM data WHERE Region = 'North',SELECT * FROM data WHERE Region = 'North',TRUE,206,206,TRUE,100,100,100,100,100,100,28.68
+2,Simple,List all products sold in 2024,SELECT * FROM data WHERE Year = 2024,"SELECT DISTINCT Product
+FROM data
+WHERE Year = 2024",TRUE,10,346,FALSE,0,2.9,5.9,100,100,100,5.43
+3,Simple,Show orders with total sales above 5000,SELECT * FROM data WHERE TotalSales > 5000,SELECT * FROM data WHERE TotalSales > 5000,TRUE,344,344,TRUE,100,100,100,66.7,0,100,4.73
+4,Simple,Display all laptop orders,SELECT * FROM data WHERE Product = 'Laptop',SELECT * FROM data WHERE Product = 'Laptop',TRUE,86,86,TRUE,100,100,100,93.3,100,80,3.49
+5,Simple,List the first 10 records,SELECT * FROM data LIMIT 10,SELECT * FROM data LIMIT 10,TRUE,10,10,TRUE,100,100,100,93.3,100,80,3.35
+6,Simple,Show all orders paid by credit card,SELECT * FROM data WHERE PaymentMethod = 'Credit Card',SELECT * FROM data WHERE PaymentMethod = 'Credit Card',TRUE,199,199,TRUE,100,100,100,43.3,0,80,3.91
+7,Simple,What are the distinct product names?,SELECT DISTINCT Product FROM data,SELECT DISTINCT Product FROM data,TRUE,10,10,TRUE,100,100,100,100,100,100,2.74
+8,Simple,Show orders from Q1,SELECT * FROM data WHERE Quarter = 'Q1',SELECT * FROM data WHERE Quarter = 'Q1',TRUE,222,222,TRUE,100,100,100,95,100,80,3.9
+9,Simple,List all corporate customer orders,SELECT * FROM data WHERE CustomerType = 'Corporate',SELECT * FROM data WHERE CustomerType = 'Corporate',TRUE,235,235,TRUE,100,100,100,93.3,100,80,4.01
+10,Simple,Show orders with discount greater than 0.20,SELECT * FROM data WHERE Discount > 0.20,SELECT * FROM data WHERE Discount > 0.20,TRUE,299,299,TRUE,100,100,100,100,100,100,4.16
+11,Simple,Display all orders by Ali Hassan,SELECT * FROM data WHERE Salesperson = 'Ali Hassan',SELECT * FROM data WHERE CustomerType = 'Ali Hassan',TRUE,0,69,FALSE,0,0,100,30,0,80,3.84
+12,Simple,Show all electronics category products,SELECT * FROM data WHERE Category = 'Electronics',SELECT * FROM data WHERE Category = 'Electronics',TRUE,469,469,TRUE,100,100,100,83.3,100,50,3.51
+13,Simple,List orders from January,SELECT * FROM data WHERE Month = 'Jan',SELECT * FROM data WHERE Month = 'January',TRUE,0,82,FALSE,0,0,100,72.5,100,80,3.53
+14,Simple,Show all orders with rating above 4,SELECT * FROM data WHERE Rating > 4,SELECT * FROM data WHERE Rating > 4,TRUE,269,269,TRUE,100,100,100,100,100,100,3.4
+15,Simple,Display orders with quantity less than 5,SELECT * FROM data WHERE Quantity < 5,SELECT * FROM data WHERE Quantity < 5,TRUE,185,185,TRUE,100,100,100,100,100,100,3.43
+16,Simple,Show all regions in the dataset,SELECT DISTINCT Region FROM data,SELECT DISTINCT Region FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.74
+17,Simple,List all payment methods used,SELECT DISTINCT PaymentMethod FROM data,SELECT DISTINCT PaymentMethod FROM data,TRUE,5,5,TRUE,100,100,100,100,100,100,2.94
+18,Simple,Show orders from the East region in 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,SELECT * FROM data WHERE Region = 'East' AND Year = 2023,TRUE,68,68,TRUE,100,100,100,100,100,100,5.83
+19,Simple,Display smartwatch orders with quantity above 10,SELECT * FROM data WHERE Product = 'Smartwatch' AND Quantity > 10,SELECT * FROM data WHERE Product = 'smartwatch' AND Quantity > 10,TRUE,0,54,FALSE,0,0,100,83.8,100,100,5.15
+20,Simple,List all orders between unit price 100 and 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,SELECT * FROM data WHERE UnitPrice BETWEEN 100 AND 500,TRUE,452,452,TRUE,100,100,100,100,100,100,5.57
+21,Simple,Show the most recent 20 orders,SELECT * FROM data ORDER BY Date DESC LIMIT 20,"SELECT *
+FROM data
+ORDER BY Date DESC
+LIMIT 20",TRUE,20,20,TRUE,100,100,100,90,100,80,4.71
+22,Simple,List all salespersons in the dataset,SELECT DISTINCT Salesperson FROM data,SELECT DISTINCT Salesperson FROM data,TRUE,15,15,TRUE,100,100,100,100,100,100,3.08
+23,Simple,Show orders where revenue is greater than total sales,SELECT * FROM data WHERE Revenue > TotalSales,"SELECT *
+FROM data
+WHERE Revenue > TotalSales",TRUE,0,0,TRUE,100,100,100,56.7,0,100,4.12
+24,Simple,Display all customer types available,SELECT DISTINCT CustomerType FROM data,SELECT DISTINCT CustomerType FROM data,TRUE,4,4,TRUE,100,100,100,100,100,100,3.13
+25,Simple,Show all camera orders from the South region,SELECT * FROM data WHERE Product = 'Camera' AND Region = 'South',SELECT * FROM data WHERE Region = 'South' AND Product LIKE '%Camera%',TRUE,22,22,TRUE,100,100,100,100,100,100,4.72
+26,Simple,List orders where discount is zero,SELECT * FROM data WHERE Discount = 0,SELECT * FROM data WHERE Discount = 0,TRUE,23,23,TRUE,100,100,100,100,100,100,3.37
+27,Simple,Show all wearables category orders,SELECT * FROM data WHERE Category = 'Wearables',"SELECT *
+FROM data
+WHERE Category = 'Wearables'",TRUE,98,98,TRUE,100,100,100,100,100,100,3.99
+28,Simple,Display orders from 2022 Q4,SELECT * FROM data WHERE Year = 2022 AND Quarter = 'Q4',SELECT * FROM data WHERE Year = 2022 AND Quarter = 4,TRUE,0,81,FALSE,0,0,100,72.5,100,80,4.82
+29,Simple,Show all orders sorted by unit price,SELECT * FROM data ORDER BY UnitPrice,SELECT * FROM data ORDER BY UnitPrice,TRUE,1000,1000,TRUE,100,100,100,50,0,100,3.45
+30,Simple,List all returning customer orders in the West region,SELECT * FROM data WHERE CustomerType = 'Returning' AND Region = 'West',SELECT * FROM data WHERE Region = 'West',TRUE,188,45,FALSE,0,0,100,91.7,100,100,3.68
+31,Simple,Show all orders with rating exactly 5,SELECT * FROM data WHERE Rating = 5.0,SELECT * FROM data WHERE Rating = 5,TRUE,17,17,TRUE,100,100,100,100,100,100,3.48
+32,Simple,Display all office category products,SELECT * FROM data WHERE Category = 'Office',"SELECT *
+FROM data
+WHERE Category = 'Office'",TRUE,111,111,TRUE,100,100,100,83.3,100,50,3.91
+33,Simple,List online customer orders paid by online transfer,SELECT * FROM data WHERE CustomerType = 'Online' AND PaymentMethod = 'Online Transfer',"SELECT *
+FROM data
+WHERE PaymentMethod = 'Online Transfer'",TRUE,222,59,FALSE,0,0,100,51.7,0,80,4.37
+34,Simple,Show orders from March 2023,SELECT * FROM data WHERE Month = 'Mar' AND Year = 2023,SELECT * FROM data WHERE Month = 'March' AND Year = 2023,TRUE,0,22,FALSE,0,0,100,72.5,100,80,5.09
+35,Simple,Display all distinct categories in the dataset,SELECT DISTINCT Category FROM data,SELECT DISTINCT Category FROM data,TRUE,4,4,TRUE,100,100,100,90,100,80,2.81
+36,Simple,Show all monitor and keyboard orders,"SELECT * FROM data WHERE Product IN ('Monitor', 'Keyboard')",SELECT * FROM data WHERE Product LIKE '%monitor%' OR Product LIKE '%keyboard%',TRUE,185,185,TRUE,100,100,100,93.3,100,80,4.36
+37,Simple,List orders with revenue above 10000,SELECT * FROM data WHERE Revenue > 10000,SELECT * FROM data WHERE Revenue > 10000,TRUE,137,137,TRUE,100,100,100,100,100,100,4.07
+38,Simple,Show all orders handled by Fatima Noor,SELECT * FROM data WHERE Salesperson = 'Fatima Noor',SELECT * FROM data WHERE Salesperson = 'Fatima Noor',TRUE,62,62,TRUE,100,100,100,40,0,80,3.76
+39,Simple,Display the cheapest 5 products by unit price,SELECT * FROM data ORDER BY UnitPrice ASC LIMIT 5,SELECT Product FROM data ORDER BY UnitPrice LIMIT 5,TRUE,5,5,FALSE,0,100,5.9,50,0,100,3.69
+40,Simple,Show all installment payment orders,SELECT * FROM data WHERE PaymentMethod = 'Installment',SELECT * FROM data WHERE PaymentMethod = 'Installment',TRUE,196,196,TRUE,100,100,100,93.3,100,80,3.72
+41,Aggregation,What is the total sales by region?,"SELECT Region, SUM(TotalSales) FROM data GROUP BY Region","SELECT Region, SUM(TotalSales) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.01
+42,Aggregation,Show average unit price per product,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product","SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category",TRUE,4,10,FALSE,0,40,50,75,100,50,4.01
+43,Aggregation,Count the number of orders per category,"SELECT Category, COUNT(*) FROM data GROUP BY Category","SELECT Category, COUNT(*) FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,100,100,100,100,3.43
+44,Aggregation,Total revenue by year,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year","SELECT Year, SUM(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.6
+45,Aggregation,Maximum total sales in each region,"SELECT Region, MAX(TotalSales) FROM data GROUP BY Region","SELECT Region, MAX(TotalSales)
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,100,83.3,66.7,100,4.16
+46,Aggregation,What is the overall average rating?,SELECT AVG(Rating) FROM data,SELECT avg(Rating) FROM data,TRUE,1,1,TRUE,100,100,100,100,100,100,2.9
+47,Aggregation,Top 5 products by total revenue,"SELECT Product, SUM(Revenue) FROM data GROUP BY Product ORDER BY SUM(Revenue) DESC LIMIT 5","SELECT Product, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Product
+ORDER BY TotalRevenue DESC
+LIMIT 5",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.08
+48,Aggregation,Monthly total sales for 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,100,100,100,7.36
+49,Aggregation,How many orders per salesperson?,"SELECT Salesperson, COUNT(*) FROM data GROUP BY Salesperson","SELECT Salesperson, COUNT(OrderID) AS NumberOfOrders FROM data GROUP BY Salesperson",TRUE,15,15,TRUE,100,100,50,100,100,100,5.55
+50,Aggregation,Minimum and maximum unit price per category,"SELECT Category, MIN(UnitPrice), MAX(UnitPrice) FROM data GROUP BY Category","SELECT Category, MIN(UnitPrice) AS MinimumUnitPrice, MAX(UnitPrice) AS MaximumUnitPrice FROM data GROUP BY Category",TRUE,4,4,TRUE,100,100,33.3,100,100,100,6.11
+51,Aggregation,Total quantity sold by product,"SELECT Product, SUM(Quantity) FROM data GROUP BY Product","SELECT Product, SUM(Quantity) FROM data GROUP BY Product",TRUE,10,10,TRUE,100,100,100,100,100,100,3.85
+52,Aggregation,Average discount per payment method,"SELECT PaymentMethod, AVG(Discount) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod,AVG(Discount) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.35
+53,Aggregation,Total orders per quarter,"SELECT Quarter, COUNT(*) FROM data GROUP BY Quarter","SELECT
+  Quarter
+FROM data
+GROUP BY
+  Quarter",TRUE,4,4,FALSE,0,100,50,75,50,100,4.22
+54,Aggregation,Average rating by product,"SELECT Product, AVG(Rating) FROM data GROUP BY Product",SELECT avg(Rating) FROM data,TRUE,1,10,FALSE,0,10,50,50,50,50,3.22
+55,Aggregation,Sum of revenue per customer type,"SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType","SELECT CustomerType, SUM(Revenue) FROM data GROUP BY CustomerType",TRUE,4,4,TRUE,100,100,100,100,100,100,4.09
+56,Aggregation,Count of distinct products per region,"SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Product) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.02
+57,Aggregation,Average quantity per order by region,"SELECT Region, AVG(Quantity) FROM data GROUP BY Region","SELECT Region, AVG(Quantity) AS AverageQuantity
+FROM data
+GROUP BY Region",TRUE,5,5,TRUE,100,100,50,66.7,100,100,4.83
+58,Aggregation,Top 3 salespersons by total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson ORDER BY SUM(Revenue) DESC LIMIT 3","SELECT Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Salesperson
+ORDER BY TotalRevenue DESC
+LIMIT 3",TRUE,3,3,TRUE,100,100,50,88.9,66.7,100,6.86
+59,Aggregation,Total sales per payment method,"SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod","SELECT PaymentMethod, SUM(TotalSales) FROM data GROUP BY PaymentMethod",TRUE,5,5,TRUE,100,100,100,100,100,100,4.36
+60,Aggregation,Number of orders above 5000 in total sales,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,SELECT COUNT(*) FROM data WHERE TotalSales > 5000,TRUE,1,1,TRUE,100,100,100,83.3,50,100,5.05
+61,Aggregation,Average revenue per year,"SELECT Year, AVG(Revenue) FROM data GROUP BY Year","SELECT Year, AVG(Revenue) FROM data GROUP BY Year",TRUE,3,3,TRUE,100,100,100,100,100,100,3.95
+62,Aggregation,Highest rated product on average,"SELECT Product, AVG(Rating) FROM data GROUP BY Product ORDER BY AVG(Rating) DESC LIMIT 1",SELECT Product FROM data ORDER BY Rating DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,66.7,0,100,3.81
+63,Aggregation,Total number of corporate orders per region,"SELECT Region, COUNT(*) FROM data WHERE CustomerType = 'Corporate' GROUP BY Region","SELECT
+  Region,
+  COUNT(OrderID)
+FROM data
+WHERE
+  CustomerType = 'Corporate'
+GROUP BY
+  Region",TRUE,5,5,TRUE,100,100,50,88.9,66.7,100,6.88
+64,Aggregation,Lowest 5 products by average unit price,"SELECT Product, AVG(UnitPrice) FROM data GROUP BY Product ORDER BY AVG(UnitPrice) ASC LIMIT 5",SELECT Product FROM data ORDER BY UnitPrice DESC LIMIT 5,TRUE,5,5,FALSE,0,100,50,62.5,0,100,4.28
+65,Aggregation,How many distinct salespersons per region?,"SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region","SELECT Region, COUNT(DISTINCT Salesperson) FROM data GROUP BY Region",TRUE,5,5,TRUE,100,100,100,100,100,100,4.92
+66,Aggregation,Total discount amount by product,"SELECT Product, SUM(Discount * TotalSales) FROM data GROUP BY Product","SELECT
+  SUM(Discount)
+FROM data",TRUE,1,10,FALSE,0,10,0,50,50,50,3.8
+67,Aggregation,Average total sales per month across all years,"SELECT Month, AVG(TotalSales) FROM data GROUP BY Month","SELECT
+  Month,
+  AVG(TotalSales)
+FROM data
+GROUP BY
+  Month",TRUE,12,12,TRUE,100,100,100,66.7,66.7,66.7,5.77
+68,Aggregation,Count of orders per year and quarter,"SELECT Year, Quarter, COUNT(*) FROM data GROUP BY Year, Quarter","SELECT
+  Year,
+  Quarter,
+  COUNT(OrderID)
+FROM data
+GROUP BY
+  Year,
+  Quarter",TRUE,12,12,TRUE,100,100,66.7,100,100,100,6.67
+69,Aggregation,Total revenue from electronics category,SELECT SUM(Revenue) FROM data WHERE Category = 'Electronics',SELECT sum(TotalSales) FROM data WHERE Category = 'Electronics',TRUE,1,1,FALSE,0,100,0,87.5,100,50,4.34
+70,Aggregation,Products with more than 100 orders,"SELECT Product, COUNT(*) FROM data GROUP BY Product HAVING COUNT(*) > 100",SELECT Product FROM data WHERE Product IN (SELECT Product FROM data GROUP BY Product HAVING COUNT(*) > 100),TRUE,538,5,FALSE,0,0,50,100,100,100,6.71
+71,Complex,Show total sales by region and product,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product",TRUE,50,50,TRUE,100,100,66.7,100,100,100,6.61
+72,Complex,Products with above-average revenue,SELECT * FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),SELECT Product FROM data WHERE Revenue > (SELECT AVG(Revenue) FROM data),TRUE,316,316,FALSE,0,100,5.9,100,100,100,4.34
+73,Complex,Region with the highest total revenue,"SELECT Region, SUM(Revenue) FROM data GROUP BY Region ORDER BY SUM(Revenue) DESC LIMIT 1",SELECT Region FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,1,FALSE,0,100,50,33.3,0,50,3.65
+74,Complex,Monthly sales trend for laptops in 2024,"SELECT Month, SUM(TotalSales) FROM data WHERE Product = 'Laptop' AND Year = 2024 GROUP BY Month","SELECT
+  Month,
+  SUM(TotalSales)
+FROM data
+WHERE
+  Year = 2024 AND Product LIKE '%Laptop%'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,11,11,TRUE,100,100,100,100,100,100,8.67
+75,Complex,Compare total revenue by customer type per year,"SELECT Year, CustomerType, SUM(Revenue) FROM data GROUP BY Year, CustomerType","SELECT CustomerType, Year, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY CustomerType, Year
+ORDER BY Year, TotalRevenue DESC",TRUE,12,12,FALSE,100,100,66.7,83.3,66.7,100,7.13
+76,Complex,Top 3 regions by average order rating,"SELECT Region, AVG(Rating) FROM data GROUP BY Region ORDER BY AVG(Rating) DESC LIMIT 3",SELECT Region FROM data ORDER BY AVG(Rating) DESC LIMIT 3,FALSE,0,3,FALSE,0,0,0,37.8,33.3,100,4.01
+77,Complex,Percentage of total revenue each product contributes,"SELECT Product, ROUND(SUM(Revenue) * 100.0 / (SELECT SUM(Revenue) FROM data), 2) FROM data GROUP BY Product","SELECT
+  Product,
+  TotalSales * 1.0 / (
+    SELECT
+      SUM(TotalSales)
+    FROM data
+  ) AS PercentageOfTotalRevenue
+FROM data
+GROUP BY
+  Product",TRUE,10,10,FALSE,0,100,50,58.3,66.7,50,9.59
+78,Complex,Salespersons who generated above-average total revenue,"SELECT Salesperson, SUM(Revenue) FROM data GROUP BY Salesperson HAVING SUM(Revenue) > (SELECT AVG(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson))",SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,16.7,0,50,4.16
+79,Complex,Quarterly revenue trend for each region,"SELECT Region, Quarter, SUM(Revenue) FROM data GROUP BY Region, Quarter ORDER BY Region, Quarter","SELECT
+  Year,
+  Quarter,
+  SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY
+  Year,
+  Quarter
+ORDER BY
+  Year,
+  Quarter",TRUE,12,20,FALSE,0,60,33.3,83.3,100,66.7,8.77
+80,Complex,Products with highest sales in each region,"SELECT Region, Product, SUM(TotalSales) FROM data GROUP BY Region, Product ORDER BY Region, SUM(TotalSales) DESC","SELECT Region, Product, SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY Region, Product
+ORDER BY TotalSales DESC",TRUE,50,50,TRUE,100,100,66.7,66.7,50,100,7.56
+81,Complex,Year-over-year revenue growth,"SELECT Year, SUM(Revenue) FROM data GROUP BY Year ORDER BY Year","SELECT
+  Year,
+  Revenue,
+  LAG(Revenue, 1, 0) OVER (ORDER BY Year) AS PreviousYearRevenue
+FROM data
+ORDER BY
+  Year",TRUE,1000,3,FALSE,50,0,50,100,100,100,10.27
+82,Complex,Average revenue per order for each product category by year,"SELECT Year, Category, AVG(Revenue) FROM data GROUP BY Year, Category","SELECT
+  Category,
+  Year,
+  AVG(Revenue)
+FROM data
+GROUP BY
+  Category,
+  Year",TRUE,12,12,FALSE,100,100,100,58.3,100,75,8.03
+83,Complex,Find salespersons who sold all product categories,SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(DISTINCT Category) = (SELECT COUNT(DISTINCT Category) FROM data),SELECT Salesperson FROM data WHERE Salesperson IN (SELECT Salesperson FROM data GROUP BY Salesperson HAVING COUNT(Category) = (SELECT COUNT(DISTINCT Category) FROM data)),TRUE,0,15,FALSE,50,0,100,65,100,50,9.12
+84,Complex,Products sold in every region,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT Region) = (SELECT COUNT(DISTINCT Region) FROM data),SELECT DISTINCT Region FROM data,TRUE,5,10,FALSE,50,50,0,75,100,50,3.13
+85,Complex,Monthly trend of average discount rate in 2024,"SELECT Month, AVG(Discount) FROM data WHERE Year = 2024 GROUP BY Month","SELECT
+  STRFTIME('%Y-%m', Date) AS Month,
+  AVG(Discount) AS AverageDiscountRate
+FROM data
+WHERE
+  STRFTIME('%Y', Date) = '2024'
+GROUP BY
+  Month
+ORDER BY
+  Month",TRUE,12,12,FALSE,100,100,50,100,100,100,13.6
+86,Complex,Compare cash vs credit card payments by total revenue and average rating,"SELECT PaymentMethod, SUM(Revenue), AVG(Rating) FROM data WHERE PaymentMethod IN ('Cash', 'Credit Card') GROUP BY PaymentMethod","SELECT
+  PaymentMethod,
+  SUM(TotalSales) AS TotalRevenue,
+  AVG(Rating) AS AverageRating
+FROM data
+GROUP BY
+  PaymentMethod",TRUE,5,2,FALSE,0,0,33.3,58.3,75,50,9.14
+87,Complex,Rank products by total sales within each region,"SELECT Region, Product, SUM(TotalSales), RANK() OVER (PARTITION BY Region ORDER BY SUM(TotalSales) DESC) FROM data GROUP BY Region, Product","SELECT
+  Product,
+  SUM(TotalSales) AS TotalSales
+FROM data
+GROUP BY
+  Product,
+  Region
+ORDER BY
+  TotalSales DESC",TRUE,50,50,FALSE,0,100,25,100,100,100,8.69
+88,Complex,Running total of revenue by date,"SELECT Date, Revenue, SUM(Revenue) OVER (ORDER BY Date) FROM data","SELECT
+  Date,
+  SUM(Revenue) OVER (ORDER BY Date) AS RunningTotalRevenue
+FROM data",TRUE,1000,1000,FALSE,0,100,33.3,75,50,100,6.01
+89,Complex,Categories where average unit price exceeds 500,"SELECT Category, AVG(UnitPrice) FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500",SELECT Category FROM data GROUP BY Category HAVING AVG(UnitPrice) > 500,TRUE,1,1,FALSE,0,100,50,66.7,100,100,5.19
+90,Complex,Top salesperson in each region by revenue,"SELECT Region, Salesperson, SUM(Revenue) FROM data GROUP BY Region, Salesperson ORDER BY Region, SUM(Revenue) DESC","SELECT Region, Salesperson, SUM(Revenue) AS TotalRevenue
+FROM data
+GROUP BY Region, Salesperson
+ORDER BY Region, TotalRevenue DESC",TRUE,75,75,TRUE,100,100,66.7,75,50,100,9.79
+91,Complex,Orders where total sales in top 10 percent,SELECT * FROM data WHERE TotalSales >= (SELECT TotalSales FROM data ORDER BY TotalSales DESC LIMIT 1 OFFSET (SELECT COUNT(*)/10 FROM data)),"SELECT *
+FROM data
+WHERE TotalSales >= (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY TotalSales) FROM data)",FALSE,0,101,FALSE,0,0,0,15.6,0,100,8.16
+92,Complex,Product category revenue split by online vs walk-in customers,"SELECT Category, CustomerType, SUM(Revenue) FROM data WHERE CustomerType IN ('Online', 'Walk-in') GROUP BY Category, CustomerType","SELECT
+  Category,
+  SUM(CASE WHEN CustomerType = 'Online' THEN Revenue ELSE 0 END) AS OnlineRevenue,
+  SUM(CASE WHEN CustomerType = 'Walk-In' THEN Revenue ELSE 0 END) AS WalkInRevenue
+FROM data
+GROUP BY
+  Category",TRUE,4,8,FALSE,0,50,33.3,80.6,100,66.7,15.9
+93,Complex,Show moving average of daily revenue over 7-day window,"SELECT Date, Revenue, AVG(Revenue) OVER (ORDER BY Date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) FROM data","SELECT
+  Date,
+  Revenue,
+  AVG(Revenue) OVER (ORDER BY Date ASC ROWS BETWEEN 6 PRECEDING AND 6 FOLLOWING) AS MovingAverageRevenue
+FROM data",TRUE,1000,1000,FALSE,100,100,66.7,100,100,100,10.68
+94,Complex,Months with above-average total orders,"SELECT Month, COUNT(*) FROM data GROUP BY Month HAVING COUNT(*) > (SELECT COUNT(*) / 12 FROM data)",SELECT Month FROM data GROUP BY Month ORDER BY COUNT(OrderID) DESC LIMIT 1,TRUE,1,7,FALSE,0,14.3,50,33.3,0,100,19.68
+95,Complex,Revenue difference between highest and lowest performing salesperson,SELECT MAX(total) - MIN(total) FROM (SELECT SUM(Revenue) as total FROM data GROUP BY Salesperson),"SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales DESC LIMIT 1)
+UNION
+SELECT SUM(TotalSales) FROM data WHERE Salesperson = (SELECT Salesperson FROM data ORDER BY TotalSales ASC LIMIT 1)",TRUE,2,1,FALSE,0,0,0,50,0,50,48.07
+96,Complex,Show regions where all products have been sold,SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),SELECT Region FROM data GROUP BY Region HAVING COUNT(DISTINCT Product) = (SELECT COUNT(DISTINCT Product) FROM data),TRUE,5,5,TRUE,100,100,100,66.7,100,100,7.72
+97,Complex,Average order value trend by quarter and year,"SELECT Year, Quarter, AVG(TotalSales) FROM data GROUP BY Year, Quarter ORDER BY Year, Quarter","SELECT
+  STRFTIME('%Y', Date) AS Year,
+  STRFTIME('%m', Date) AS Month,
+  STRFTIME('%Q', Date) AS Quarter,
+  AVG(TotalSales) AS AverageOrderValue
+FROM data
+GROUP BY Year, Month, Quarter
+ORDER BY Year, Month, Quarter",TRUE,36,12,FALSE,0,0,66.7,100,100,100,16.93
+98,Complex,Cumulative sum of quantity sold per product ordered by date,"SELECT Product, Date, Quantity, SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) FROM data","SELECT
+  Date,
+  Product,
+  SUM(Quantity) OVER (PARTITION BY Product ORDER BY Date) AS CumulativeQuantity
+FROM data",TRUE,1000,1000,FALSE,0,100,50,75,50,100,8.56
+99,Complex,Products that are only sold through online customers,SELECT Product FROM data GROUP BY Product HAVING COUNT(DISTINCT CustomerType) = 1 AND MAX(CustomerType) = 'Online',"SELECT DISTINCT Product
+FROM data
+WHERE CustomerType = 'Online'",TRUE,10,0,FALSE,50,0,100,100,100,100,150.01
+100,Complex,Compare revenue per unit across all products and rank them,"SELECT Product, SUM(Revenue)/SUM(Quantity) as RevenuePerUnit FROM data GROUP BY Product ORDER BY RevenuePerUnit DESC","SELECT
+  Product,
+  Revenue / Quantity AS RevenuePerUnit,
+  RANK(Revenue / Quantity) OVER (ORDER BY Revenue / Quantity DESC) AS RevenueRank
+FROM data",FALSE,0,10,FALSE,0,0,0,26.7,0,100,34.91

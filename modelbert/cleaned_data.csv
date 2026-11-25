@@ -1,0 +1,401 @@
+QueryID,Generated_Rows,Expected_Rows,Exact_Match,Value_Match_Pct,Row_Match_Pct,Col_Match_Pct,Confidence_Score,Operation_Match,Column_Match,Generation_Time_s,processed_NL_Query,processed_Expected_SQL,processed_Generated_SQL,Level,Execution_Success
+1,206,206,True,100,100.0,100.0,100.0,100.0,100.0,28.68,show sale north region,select data region,select data region,Simple,True
+2,10,346,False,0,2.9,5.9,100.0,100.0,100.0,5.43,list product sold 2024,select data year 2024,select distinct product data year 2024,Simple,True
+3,344,344,True,100,100.0,100.0,66.7,0.0,100.0,4.73,show order total sale 5000,select data totalsales 5000,select data totalsales 5000,Simple,True
+4,86,86,True,100,100.0,100.0,93.3,100.0,80.0,3.49,display laptop order,select data product,select data product,Simple,True
+5,10,10,True,100,100.0,100.0,93.3,100.0,80.0,3.35,list first 10 record,select data limit 10,select data limit 10,Simple,True
+6,199,199,True,100,100.0,100.0,43.3,0.0,80.0,3.91,show order paid credit card,select data paymentmethod card,select data paymentmethod card,Simple,True
+7,10,10,True,100,100.0,100.0,100.0,100.0,100.0,2.74,distinct product name,select distinct product data,select distinct product data,Simple,True
+8,222,222,True,100,100.0,100.0,95.0,100.0,80.0,3.9,show order q1,select data quarter,select data quarter,Simple,True
+9,235,235,True,100,100.0,100.0,93.3,100.0,80.0,4.01,list corporate customer order,select data customertype,select data customertype,Simple,True
+10,299,299,True,100,100.0,100.0,100.0,100.0,100.0,4.16,show order discount greater,select data discount,select data discount,Simple,True
+11,0,69,False,0,0.0,100.0,30.0,0.0,80.0,3.84,display order ali hassan,select data salesperson hassan,select data customertype hassan,Simple,True
+12,469,469,True,100,100.0,100.0,83.3,100.0,50.0,3.51,show electronics category product,select data category,select data category,Simple,True
+13,0,82,False,0,0.0,100.0,72.5,100.0,80.0,3.53,list order january,select data month,select data month,Simple,True
+14,269,269,True,100,100.0,100.0,100.0,100.0,100.0,3.4,show order rating 4,select data rating 4,select data rating 4,Simple,True
+15,185,185,True,100,100.0,100.0,100.0,100.0,100.0,3.43,display order quantity less 5,select data quantity 5,select data quantity 5,Simple,True
+16,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.74,show region dataset,select distinct region data,select distinct region data,Simple,True
+17,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.94,list payment method used,select distinct paymentmethod data,select distinct paymentmethod data,Simple,True
+18,68,68,True,100,100.0,100.0,100.0,100.0,100.0,5.83,show order east region 2023,select data region year 2023,select data region year 2023,Simple,True
+19,0,54,False,0,0.0,100.0,83.8,100.0,100.0,5.15,display smartwatch order quantity 10,select data product quantity 10,select data product quantity 10,Simple,True
+20,452,452,True,100,100.0,100.0,100.0,100.0,100.0,5.57,list order unit price 100 500,select data unitprice 100 500,select data unitprice 100 500,Simple,True
+21,20,20,True,100,100.0,100.0,90.0,100.0,80.0,4.71,show recent 20 order,select data order date desc limit 20,select data order date desc limit 20,Simple,True
+22,15,15,True,100,100.0,100.0,100.0,100.0,100.0,3.08,list salesperson dataset,select distinct salesperson data,select distinct salesperson data,Simple,True
+23,0,0,True,100,100.0,100.0,56.7,0.0,100.0,4.12,show order revenue greater total sale,select data revenue totalsales,select data revenue totalsales,Simple,True
+24,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.13,display customer type available,select distinct customertype data,select distinct customertype data,Simple,True
+25,22,22,True,100,100.0,100.0,100.0,100.0,100.0,4.72,show camera order south region,select data product region,select data region product like camera,Simple,True
+26,23,23,True,100,100.0,100.0,100.0,100.0,100.0,3.37,list order discount zero,select data discount 0,select data discount 0,Simple,True
+27,98,98,True,100,100.0,100.0,100.0,100.0,100.0,3.99,show wearable category order,select data category,select data category,Simple,True
+28,0,81,False,0,0.0,100.0,72.5,100.0,80.0,4.82,display order 2022 q4,select data year 2022 quarter,select data year 2022 quarter 4,Simple,True
+29,1000,1000,True,100,100.0,100.0,50.0,0.0,100.0,3.45,show order sorted unit price,select data order unitprice,select data order unitprice,Simple,True
+30,188,45,False,0,0.0,100.0,91.7,100.0,100.0,3.68,list returning customer order west region,select data customertype region,select data region,Simple,True
+31,17,17,True,100,100.0,100.0,100.0,100.0,100.0,3.48,show order rating exactly 5,select data rating,select data rating 5,Simple,True
+32,111,111,True,100,100.0,100.0,83.3,100.0,50.0,3.91,display office category product,select data category,select data category,Simple,True
+33,222,59,False,0,0.0,100.0,51.7,0.0,80.0,4.37,list online customer order paid online transfer,select data customertype paymentmethod transfer,select data paymentmethod transfer,Simple,True
+34,0,22,False,0,0.0,100.0,72.5,100.0,80.0,5.09,show order march 2023,select data month year 2023,select data month year 2023,Simple,True
+35,4,4,True,100,100.0,100.0,90.0,100.0,80.0,2.81,display distinct category dataset,select distinct category data,select distinct category data,Simple,True
+36,185,185,True,100,100.0,100.0,93.3,100.0,80.0,4.36,show monitor keyboard order,select data product,select data product like monitor product like keyboard,Simple,True
+37,137,137,True,100,100.0,100.0,100.0,100.0,100.0,4.07,list order revenue 10000,select data revenue 10000,select data revenue 10000,Simple,True
+38,62,62,True,100,100.0,100.0,40.0,0.0,80.0,3.76,show order handled fatima noor,select data salesperson noor,select data salesperson noor,Simple,True
+39,5,5,False,0,100.0,5.9,50.0,0.0,100.0,3.69,display cheapest 5 product unit price,select data order unitprice asc limit 5,select product data order unitprice limit 5,Simple,True
+40,196,196,True,100,100.0,100.0,93.3,100.0,80.0,3.72,show installment payment order,select data paymentmethod,select data paymentmethod,Simple,True
+41,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.01,total sale region,select region sum totalsales data group region,select region sum totalsales data group region,Aggregation,True
+42,4,10,False,0,40.0,50.0,75.0,100.0,50.0,4.01,show average unit price per product,select product avg unitprice data group product,select category avg unitprice data group category,Aggregation,True
+43,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.43,count number order per category,select category count data group category,select category count data group category,Aggregation,True
+44,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.6,total revenue year,select year sum revenue data group year,select year sum revenue data group year,Aggregation,True
+45,5,5,True,100,100.0,100.0,83.3,66.7,100.0,4.16,maximum total sale region,select region max totalsales data group region,select region max totalsales data group region,Aggregation,True
+46,1,1,True,100,100.0,100.0,100.0,100.0,100.0,2.9,overall average rating,select avg rating data,select avg rating data,Aggregation,True
+47,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.08,top 5 product total revenue,select product sum revenue data group product order sum revenue desc limit 5,select product sum revenue totalrevenue data group product order totalrevenue desc limit 5,Aggregation,True
+48,12,12,True,100,100.0,100.0,100.0,100.0,100.0,7.36,monthly total sale 2024,select month sum totalsales data year 2024 group month,select month sum totalsales data year 2024 group month,Aggregation,True
+49,15,15,True,100,100.0,50.0,100.0,100.0,100.0,5.55,many order per salesperson,select salesperson count data group salesperson,select salesperson count orderid numberoforders data group salesperson,Aggregation,True
+50,4,4,True,100,100.0,33.3,100.0,100.0,100.0,6.11,minimum maximum unit price per category,select category min unitprice max unitprice data group category,select category min unitprice minimumunitprice max unitprice maximumunitprice data group category,Aggregation,True
+51,10,10,True,100,100.0,100.0,100.0,100.0,100.0,3.85,total quantity sold product,select product sum quantity data group product,select product sum quantity data group product,Aggregation,True
+52,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.35,average discount per payment method,select paymentmethod avg discount data group paymentmethod,select paymentmethod avg discount data group paymentmethod,Aggregation,True
+53,4,4,False,0,100.0,50.0,75.0,50.0,100.0,4.22,total order per quarter,select quarter count data group quarter,select quarter data group quarter,Aggregation,True
+54,1,10,False,0,10.0,50.0,50.0,50.0,50.0,3.22,average rating product,select product avg rating data group product,select avg rating data,Aggregation,True
+55,4,4,True,100,100.0,100.0,100.0,100.0,100.0,4.09,sum revenue per customer type,select customertype sum revenue data group customertype,select customertype sum revenue data group customertype,Aggregation,True
+56,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.02,count distinct product per region,select region count distinct product data group region,select region count distinct product data group region,Aggregation,True
+57,5,5,True,100,100.0,50.0,66.7,100.0,100.0,4.83,average quantity per order region,select region avg quantity data group region,select region avg quantity averagequantity data group region,Aggregation,True
+58,3,3,True,100,100.0,50.0,88.9,66.7,100.0,6.86,top 3 salesperson total revenue,select salesperson sum revenue data group salesperson order sum revenue desc limit 3,select salesperson sum revenue totalrevenue data group salesperson order totalrevenue desc limit 3,Aggregation,True
+59,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.36,total sale per payment method,select paymentmethod sum totalsales data group paymentmethod,select paymentmethod sum totalsales data group paymentmethod,Aggregation,True
+60,1,1,True,100,100.0,100.0,83.3,50.0,100.0,5.05,number order 5000 total sale,select count data totalsales 5000,select count data totalsales 5000,Aggregation,True
+61,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.95,average revenue per year,select year avg revenue data group year,select year avg revenue data group year,Aggregation,True
+62,1,1,False,0,100.0,50.0,66.7,0.0,100.0,3.81,highest rated product average,select product avg rating data group product order avg rating desc limit 1,select product data order rating desc limit 1,Aggregation,True
+63,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.88,total number corporate order per region,select region count data customertype group region,select region count orderid data customertype group region,Aggregation,True
+64,5,5,False,0,100.0,50.0,62.5,0.0,100.0,4.28,lowest 5 product average unit price,select product avg unitprice data group product order avg unitprice asc limit 5,select product data order unitprice desc limit 5,Aggregation,True
+65,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.92,many distinct salesperson per region,select region count distinct salesperson data group region,select region count distinct salesperson data group region,Aggregation,True
+66,1,10,False,0,10.0,0.0,50.0,50.0,50.0,3.8,total discount amount product,select product sum discount totalsales data group product,select sum discount data,Aggregation,True
+67,12,12,True,100,100.0,100.0,66.7,66.7,66.7,5.77,average total sale per month across year,select month avg totalsales data group month,select month avg totalsales data group month,Aggregation,True
+68,12,12,True,100,100.0,66.7,100.0,100.0,100.0,6.67,count order per year quarter,select year quarter count data group year quarter,select year quarter count orderid data group year quarter,Aggregation,True
+69,1,1,False,0,100.0,0.0,87.5,100.0,50.0,4.34,total revenue electronics category,select sum revenue data category,select sum totalsales data category,Aggregation,True
+70,538,5,False,0,0.0,50.0,100.0,100.0,100.0,6.71,product 100 order,select product count data group product count 100,select product data product select product data group product count 100,Aggregation,True
+71,50,50,True,100,100.0,66.7,100.0,100.0,100.0,6.61,show total sale region product,select region product sum totalsales data group region product,select region product sum totalsales totalsales data group region product,Complex,True
+72,316,316,False,0,100.0,5.9,100.0,100.0,100.0,4.34,product revenue,select data revenue select avg revenue data,select product data revenue select avg revenue data,Complex,True
+73,1,1,False,0,100.0,50.0,33.3,0.0,50.0,3.65,region highest total revenue,select region sum revenue data group region order sum revenue desc limit 1,select region data order totalsales desc limit 1,Complex,True
+74,11,11,True,100,100.0,100.0,100.0,100.0,100.0,8.67,monthly sale trend laptop 2024,select month sum totalsales data product year 2024 group month,select month sum totalsales data year 2024 product like laptop group month order month,Complex,True
+75,12,12,False,100,100.0,66.7,83.3,66.7,100.0,7.13,compare total revenue customer type per year,select year customertype sum revenue data group year customertype,select customertype year sum revenue totalrevenue data group customertype year order year totalrevenue desc,Complex,True
+76,0,3,False,0,0.0,0.0,37.8,33.3,100.0,4.01,top 3 region average order rating,select region avg rating data group region order avg rating desc limit 3,select region data order avg rating desc limit 3,Complex,False
+77,10,10,False,0,100.0,50.0,58.3,66.7,50.0,9.59,percentage total revenue product contributes,select product round sum revenue select sum revenue data 2 data group product,select product totalsales select sum totalsales data percentageoftotalrevenue data group product,Complex,True
+78,1,7,False,0,14.3,50.0,16.7,0.0,50.0,4.16,salesperson generated total revenue,select salesperson sum revenue data group salesperson sum revenue select avg total select sum revenue total data group salesperson,select salesperson data order totalsales desc limit 1,Complex,True
+79,12,20,False,0,60.0,33.3,83.3,100.0,66.7,8.77,quarterly revenue trend region,select region quarter sum revenue data group region quarter order region quarter,select year quarter sum revenue totalrevenue data group year quarter order year quarter,Complex,True
+80,50,50,True,100,100.0,66.7,66.7,50.0,100.0,7.56,product highest sale region,select region product sum totalsales data group region product order region sum totalsales desc,select region product sum totalsales totalsales data group region product order totalsales desc,Complex,True
+81,1000,3,False,50,0.0,50.0,100.0,100.0,100.0,10.27,revenue growth,select year sum revenue data group year order year,select year revenue lag revenue 1 0 order year previousyearrevenue data order year,Complex,True
+82,12,12,False,100,100.0,100.0,58.3,100.0,75.0,8.03,average revenue per order product category year,select year category avg revenue data group year category,select category year avg revenue data group category year,Complex,True
+83,0,15,False,50,0.0,100.0,65.0,100.0,50.0,9.12,find salesperson sold product category,select salesperson data group salesperson count distinct category select count distinct category data,select salesperson data salesperson select salesperson data group salesperson count category select count distinct category data,Complex,True
+84,5,10,False,50,50.0,0.0,75.0,100.0,50.0,3.13,product sold every region,select product data group product count distinct region select count distinct region data,select distinct region data,Complex,True
+85,12,12,False,100,100.0,50.0,100.0,100.0,100.0,13.6,monthly trend average discount rate 2024,select month avg discount data year 2024 group month,select strftime date month avg discount averagediscountrate data strftime date group month order month,Complex,True
+86,5,2,False,0,0.0,33.3,58.3,75.0,50.0,9.14,compare cash v credit card payment total revenue average rating,select paymentmethod sum revenue avg rating data paymentmethod card group paymentmethod,select paymentmethod sum totalsales totalrevenue avg rating averagerating data group paymentmethod,Complex,True
+87,50,50,False,0,100.0,25.0,100.0,100.0,100.0,8.69,rank product total sale within region,select region product sum totalsales rank partition region order sum totalsales desc data group region product,select product sum totalsales totalsales data group product region order totalsales desc,Complex,True
+88,1000,1000,False,0,100.0,33.3,75.0,50.0,100.0,6.01,running total revenue date,select date revenue sum revenue order date data,select date sum revenue order date runningtotalrevenue data,Complex,True
+89,1,1,False,0,100.0,50.0,66.7,100.0,100.0,5.19,category average unit price exceeds 500,select category avg unitprice data group category avg unitprice 500,select category data group category avg unitprice 500,Complex,True
+90,75,75,True,100,100.0,66.7,75.0,50.0,100.0,9.79,top salesperson region revenue,select region salesperson sum revenue data group region salesperson order region sum revenue desc,select region salesperson sum revenue totalrevenue data group region salesperson order region totalrevenue desc,Complex,True
+91,0,101,False,0,0.0,0.0,15.6,0.0,100.0,8.16,order total sale top 10 percent,select data totalsales select totalsales data order totalsales desc limit 1 offset select count data,select data totalsales select within group order totalsales data,Complex,False
+92,4,8,False,0,50.0,33.3,80.6,100.0,66.7,15.9,product category revenue split online v customer,select category customertype sum revenue data customertype group category customertype,select category sum case customertype revenue else 0 end onlinerevenue sum case customertype revenue else 0 end walkinrevenue data group category,Complex,True
+93,1000,1000,False,100,100.0,66.7,100.0,100.0,100.0,10.68,show moving average daily revenue window,select date revenue avg revenue order date row 6 preceding current row data,select date revenue avg revenue order date asc row 6 preceding 6 following movingaveragerevenue data,Complex,True
+94,1,7,False,0,14.3,50.0,33.3,0.0,100.0,19.68,month total order,select month count data group month count select count 12 data,select month data group month order count orderid desc limit 1,Complex,True
+95,2,1,False,0,0.0,0.0,50.0,0.0,50.0,48.07,revenue difference highest lowest performing salesperson,select max total min total select sum revenue total data group salesperson,select sum totalsales data salesperson select salesperson data order totalsales desc limit 1 union select sum totalsales data salesperson select salesperson data order totalsales asc limit 1,Complex,True
+96,5,5,True,100,100.0,100.0,66.7,100.0,100.0,7.72,show region product sold,select region data group region count distinct product select count distinct product data,select region data group region count distinct product select count distinct product data,Complex,True
+97,36,12,False,0,0.0,66.7,100.0,100.0,100.0,16.93,average order value trend quarter year,select year quarter avg totalsales data group year quarter order year quarter,select strftime date year strftime date month strftime q date quarter avg totalsales averageordervalue data group year month quarter order year month quarter,Complex,True
+98,1000,1000,False,0,100.0,50.0,75.0,50.0,100.0,8.56,cumulative sum quantity sold per product ordered date,select product date quantity sum quantity partition product order date data,select date product sum quantity partition product order date cumulativequantity data,Complex,True
+99,10,0,False,50,0.0,100.0,100.0,100.0,100.0,150.01,product sold online customer,select product data group product count distinct customertype 1 max customertype,select distinct product data customertype,Complex,True
+100,0,10,False,0,0.0,0.0,26.7,0.0,100.0,34.91,compare revenue per unit across product rank,select product sum revenue quantity revenueperunit data group product order revenueperunit desc,select product revenue quantity revenueperunit rank revenue quantity order revenue quantity desc revenuerank data,Complex,False
+1,206,206,True,100,100.0,100.0,100.0,100.0,100.0,28.68,show sale north region,select data region,select data region,Simple,True
+2,10,346,False,0,2.9,5.9,100.0,100.0,100.0,5.43,list product sold 2024,select data year 2024,select distinct product data year 2024,Simple,True
+3,344,344,True,100,100.0,100.0,66.7,0.0,100.0,4.73,show order total sale 5000,select data totalsales 5000,select data totalsales 5000,Simple,True
+4,86,86,True,100,100.0,100.0,93.3,100.0,80.0,3.49,display laptop order,select data product,select data product,Simple,True
+5,10,10,True,100,100.0,100.0,93.3,100.0,80.0,3.35,list first 10 record,select data limit 10,select data limit 10,Simple,True
+6,199,199,True,100,100.0,100.0,43.3,0.0,80.0,3.91,show order paid credit card,select data paymentmethod card,select data paymentmethod card,Simple,True
+7,10,10,True,100,100.0,100.0,100.0,100.0,100.0,2.74,distinct product name,select distinct product data,select distinct product data,Simple,True
+8,222,222,True,100,100.0,100.0,95.0,100.0,80.0,3.9,show order q1,select data quarter,select data quarter,Simple,True
+9,235,235,True,100,100.0,100.0,93.3,100.0,80.0,4.01,list corporate customer order,select data customertype,select data customertype,Simple,True
+10,299,299,True,100,100.0,100.0,100.0,100.0,100.0,4.16,show order discount greater,select data discount,select data discount,Simple,True
+11,0,69,False,0,0.0,100.0,30.0,0.0,80.0,3.84,display order ali hassan,select data salesperson hassan,select data customertype hassan,Simple,True
+12,469,469,True,100,100.0,100.0,83.3,100.0,50.0,3.51,show electronics category product,select data category,select data category,Simple,True
+13,0,82,False,0,0.0,100.0,72.5,100.0,80.0,3.53,list order january,select data month,select data month,Simple,True
+14,269,269,True,100,100.0,100.0,100.0,100.0,100.0,3.4,show order rating 4,select data rating 4,select data rating 4,Simple,True
+15,185,185,True,100,100.0,100.0,100.0,100.0,100.0,3.43,display order quantity less 5,select data quantity 5,select data quantity 5,Simple,True
+16,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.74,show region dataset,select distinct region data,select distinct region data,Simple,True
+17,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.94,list payment method used,select distinct paymentmethod data,select distinct paymentmethod data,Simple,True
+18,68,68,True,100,100.0,100.0,100.0,100.0,100.0,5.83,show order east region 2023,select data region year 2023,select data region year 2023,Simple,True
+19,0,54,False,0,0.0,100.0,83.8,100.0,100.0,5.15,display smartwatch order quantity 10,select data product quantity 10,select data product quantity 10,Simple,True
+20,452,452,True,100,100.0,100.0,100.0,100.0,100.0,5.57,list order unit price 100 500,select data unitprice 100 500,select data unitprice 100 500,Simple,True
+21,20,20,True,100,100.0,100.0,90.0,100.0,80.0,4.71,show recent 20 order,select data order date desc limit 20,select data order date desc limit 20,Simple,True
+22,15,15,True,100,100.0,100.0,100.0,100.0,100.0,3.08,list salesperson dataset,select distinct salesperson data,select distinct salesperson data,Simple,True
+23,0,0,True,100,100.0,100.0,56.7,0.0,100.0,4.12,show order revenue greater total sale,select data revenue totalsales,select data revenue totalsales,Simple,True
+24,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.13,display customer type available,select distinct customertype data,select distinct customertype data,Simple,True
+25,22,22,True,100,100.0,100.0,100.0,100.0,100.0,4.72,show camera order south region,select data product region,select data region product like camera,Simple,True
+26,23,23,True,100,100.0,100.0,100.0,100.0,100.0,3.37,list order discount zero,select data discount 0,select data discount 0,Simple,True
+27,98,98,True,100,100.0,100.0,100.0,100.0,100.0,3.99,show wearable category order,select data category,select data category,Simple,True
+28,0,81,False,0,0.0,100.0,72.5,100.0,80.0,4.82,display order 2022 q4,select data year 2022 quarter,select data year 2022 quarter 4,Simple,True
+29,1000,1000,True,100,100.0,100.0,50.0,0.0,100.0,3.45,show order sorted unit price,select data order unitprice,select data order unitprice,Simple,True
+30,188,45,False,0,0.0,100.0,91.7,100.0,100.0,3.68,list returning customer order west region,select data customertype region,select data region,Simple,True
+31,17,17,True,100,100.0,100.0,100.0,100.0,100.0,3.48,show order rating exactly 5,select data rating,select data rating 5,Simple,True
+32,111,111,True,100,100.0,100.0,83.3,100.0,50.0,3.91,display office category product,select data category,select data category,Simple,True
+33,222,59,False,0,0.0,100.0,51.7,0.0,80.0,4.37,list online customer order paid online transfer,select data customertype paymentmethod transfer,select data paymentmethod transfer,Simple,True
+34,0,22,False,0,0.0,100.0,72.5,100.0,80.0,5.09,show order march 2023,select data month year 2023,select data month year 2023,Simple,True
+35,4,4,True,100,100.0,100.0,90.0,100.0,80.0,2.81,display distinct category dataset,select distinct category data,select distinct category data,Simple,True
+36,185,185,True,100,100.0,100.0,93.3,100.0,80.0,4.36,show monitor keyboard order,select data product,select data product like monitor product like keyboard,Simple,True
+37,137,137,True,100,100.0,100.0,100.0,100.0,100.0,4.07,list order revenue 10000,select data revenue 10000,select data revenue 10000,Simple,True
+38,62,62,True,100,100.0,100.0,40.0,0.0,80.0,3.76,show order handled fatima noor,select data salesperson noor,select data salesperson noor,Simple,True
+39,5,5,False,0,100.0,5.9,50.0,0.0,100.0,3.69,display cheapest 5 product unit price,select data order unitprice asc limit 5,select product data order unitprice limit 5,Simple,True
+40,196,196,True,100,100.0,100.0,93.3,100.0,80.0,3.72,show installment payment order,select data paymentmethod,select data paymentmethod,Simple,True
+41,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.01,total sale region,select region sum totalsales data group region,select region sum totalsales data group region,Aggregation,True
+42,4,10,False,0,40.0,50.0,75.0,100.0,50.0,4.01,show average unit price per product,select product avg unitprice data group product,select category avg unitprice data group category,Aggregation,True
+43,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.43,count number order per category,select category count data group category,select category count data group category,Aggregation,True
+44,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.6,total revenue year,select year sum revenue data group year,select year sum revenue data group year,Aggregation,True
+45,5,5,True,100,100.0,100.0,83.3,66.7,100.0,4.16,maximum total sale region,select region max totalsales data group region,select region max totalsales data group region,Aggregation,True
+46,1,1,True,100,100.0,100.0,100.0,100.0,100.0,2.9,overall average rating,select avg rating data,select avg rating data,Aggregation,True
+47,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.08,top 5 product total revenue,select product sum revenue data group product order sum revenue desc limit 5,select product sum revenue totalrevenue data group product order totalrevenue desc limit 5,Aggregation,True
+48,12,12,True,100,100.0,100.0,100.0,100.0,100.0,7.36,monthly total sale 2024,select month sum totalsales data year 2024 group month,select month sum totalsales data year 2024 group month,Aggregation,True
+49,15,15,True,100,100.0,50.0,100.0,100.0,100.0,5.55,many order per salesperson,select salesperson count data group salesperson,select salesperson count orderid numberoforders data group salesperson,Aggregation,True
+50,4,4,True,100,100.0,33.3,100.0,100.0,100.0,6.11,minimum maximum unit price per category,select category min unitprice max unitprice data group category,select category min unitprice minimumunitprice max unitprice maximumunitprice data group category,Aggregation,True
+51,10,10,True,100,100.0,100.0,100.0,100.0,100.0,3.85,total quantity sold product,select product sum quantity data group product,select product sum quantity data group product,Aggregation,True
+52,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.35,average discount per payment method,select paymentmethod avg discount data group paymentmethod,select paymentmethod avg discount data group paymentmethod,Aggregation,True
+53,4,4,False,0,100.0,50.0,75.0,50.0,100.0,4.22,total order per quarter,select quarter count data group quarter,select quarter data group quarter,Aggregation,True
+54,1,10,False,0,10.0,50.0,50.0,50.0,50.0,3.22,average rating product,select product avg rating data group product,select avg rating data,Aggregation,True
+55,4,4,True,100,100.0,100.0,100.0,100.0,100.0,4.09,sum revenue per customer type,select customertype sum revenue data group customertype,select customertype sum revenue data group customertype,Aggregation,True
+56,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.02,count distinct product per region,select region count distinct product data group region,select region count distinct product data group region,Aggregation,True
+57,5,5,True,100,100.0,50.0,66.7,100.0,100.0,4.83,average quantity per order region,select region avg quantity data group region,select region avg quantity averagequantity data group region,Aggregation,True
+58,3,3,True,100,100.0,50.0,88.9,66.7,100.0,6.86,top 3 salesperson total revenue,select salesperson sum revenue data group salesperson order sum revenue desc limit 3,select salesperson sum revenue totalrevenue data group salesperson order totalrevenue desc limit 3,Aggregation,True
+59,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.36,total sale per payment method,select paymentmethod sum totalsales data group paymentmethod,select paymentmethod sum totalsales data group paymentmethod,Aggregation,True
+60,1,1,True,100,100.0,100.0,83.3,50.0,100.0,5.05,number order 5000 total sale,select count data totalsales 5000,select count data totalsales 5000,Aggregation,True
+61,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.95,average revenue per year,select year avg revenue data group year,select year avg revenue data group year,Aggregation,True
+62,1,1,False,0,100.0,50.0,66.7,0.0,100.0,3.81,highest rated product average,select product avg rating data group product order avg rating desc limit 1,select product data order rating desc limit 1,Aggregation,True
+63,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.88,total number corporate order per region,select region count data customertype group region,select region count orderid data customertype group region,Aggregation,True
+64,5,5,False,0,100.0,50.0,62.5,0.0,100.0,4.28,lowest 5 product average unit price,select product avg unitprice data group product order avg unitprice asc limit 5,select product data order unitprice desc limit 5,Aggregation,True
+65,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.92,many distinct salesperson per region,select region count distinct salesperson data group region,select region count distinct salesperson data group region,Aggregation,True
+66,1,10,False,0,10.0,0.0,50.0,50.0,50.0,3.8,total discount amount product,select product sum discount totalsales data group product,select sum discount data,Aggregation,True
+67,12,12,True,100,100.0,100.0,66.7,66.7,66.7,5.77,average total sale per month across year,select month avg totalsales data group month,select month avg totalsales data group month,Aggregation,True
+68,12,12,True,100,100.0,66.7,100.0,100.0,100.0,6.67,count order per year quarter,select year quarter count data group year quarter,select year quarter count orderid data group year quarter,Aggregation,True
+69,1,1,False,0,100.0,0.0,87.5,100.0,50.0,4.34,total revenue electronics category,select sum revenue data category,select sum totalsales data category,Aggregation,True
+70,538,5,False,0,0.0,50.0,100.0,100.0,100.0,6.71,product 100 order,select product count data group product count 100,select product data product select product data group product count 100,Aggregation,True
+71,50,50,True,100,100.0,66.7,100.0,100.0,100.0,6.61,show total sale region product,select region product sum totalsales data group region product,select region product sum totalsales totalsales data group region product,Complex,True
+72,316,316,False,0,100.0,5.9,100.0,100.0,100.0,4.34,product revenue,select data revenue select avg revenue data,select product data revenue select avg revenue data,Complex,True
+73,1,1,False,0,100.0,50.0,33.3,0.0,50.0,3.65,region highest total revenue,select region sum revenue data group region order sum revenue desc limit 1,select region data order totalsales desc limit 1,Complex,True
+74,11,11,True,100,100.0,100.0,100.0,100.0,100.0,8.67,monthly sale trend laptop 2024,select month sum totalsales data product year 2024 group month,select month sum totalsales data year 2024 product like laptop group month order month,Complex,True
+75,12,12,False,100,100.0,66.7,83.3,66.7,100.0,7.13,compare total revenue customer type per year,select year customertype sum revenue data group year customertype,select customertype year sum revenue totalrevenue data group customertype year order year totalrevenue desc,Complex,True
+76,0,3,False,0,0.0,0.0,37.8,33.3,100.0,4.01,top 3 region average order rating,select region avg rating data group region order avg rating desc limit 3,select region data order avg rating desc limit 3,Complex,False
+77,10,10,False,0,100.0,50.0,58.3,66.7,50.0,9.59,percentage total revenue product contributes,select product round sum revenue select sum revenue data 2 data group product,select product totalsales select sum totalsales data percentageoftotalrevenue data group product,Complex,True
+78,1,7,False,0,14.3,50.0,16.7,0.0,50.0,4.16,salesperson generated total revenue,select salesperson sum revenue data group salesperson sum revenue select avg total select sum revenue total data group salesperson,select salesperson data order totalsales desc limit 1,Complex,True
+79,12,20,False,0,60.0,33.3,83.3,100.0,66.7,8.77,quarterly revenue trend region,select region quarter sum revenue data group region quarter order region quarter,select year quarter sum revenue totalrevenue data group year quarter order year quarter,Complex,True
+80,50,50,True,100,100.0,66.7,66.7,50.0,100.0,7.56,product highest sale region,select region product sum totalsales data group region product order region sum totalsales desc,select region product sum totalsales totalsales data group region product order totalsales desc,Complex,True
+81,1000,3,False,50,0.0,50.0,100.0,100.0,100.0,10.27,revenue growth,select year sum revenue data group year order year,select year revenue lag revenue 1 0 order year previousyearrevenue data order year,Complex,True
+82,12,12,False,100,100.0,100.0,58.3,100.0,75.0,8.03,average revenue per order product category year,select year category avg revenue data group year category,select category year avg revenue data group category year,Complex,True
+83,0,15,False,50,0.0,100.0,65.0,100.0,50.0,9.12,find salesperson sold product category,select salesperson data group salesperson count distinct category select count distinct category data,select salesperson data salesperson select salesperson data group salesperson count category select count distinct category data,Complex,True
+84,5,10,False,50,50.0,0.0,75.0,100.0,50.0,3.13,product sold every region,select product data group product count distinct region select count distinct region data,select distinct region data,Complex,True
+85,12,12,False,100,100.0,50.0,100.0,100.0,100.0,13.6,monthly trend average discount rate 2024,select month avg discount data year 2024 group month,select strftime date month avg discount averagediscountrate data strftime date group month order month,Complex,True
+86,5,2,False,0,0.0,33.3,58.3,75.0,50.0,9.14,compare cash v credit card payment total revenue average rating,select paymentmethod sum revenue avg rating data paymentmethod card group paymentmethod,select paymentmethod sum totalsales totalrevenue avg rating averagerating data group paymentmethod,Complex,True
+87,50,50,False,0,100.0,25.0,100.0,100.0,100.0,8.69,rank product total sale within region,select region product sum totalsales rank partition region order sum totalsales desc data group region product,select product sum totalsales totalsales data group product region order totalsales desc,Complex,True
+88,1000,1000,False,0,100.0,33.3,75.0,50.0,100.0,6.01,running total revenue date,select date revenue sum revenue order date data,select date sum revenue order date runningtotalrevenue data,Complex,True
+89,1,1,False,0,100.0,50.0,66.7,100.0,100.0,5.19,category average unit price exceeds 500,select category avg unitprice data group category avg unitprice 500,select category data group category avg unitprice 500,Complex,True
+90,75,75,True,100,100.0,66.7,75.0,50.0,100.0,9.79,top salesperson region revenue,select region salesperson sum revenue data group region salesperson order region sum revenue desc,select region salesperson sum revenue totalrevenue data group region salesperson order region totalrevenue desc,Complex,True
+91,0,101,False,0,0.0,0.0,15.6,0.0,100.0,8.16,order total sale top 10 percent,select data totalsales select totalsales data order totalsales desc limit 1 offset select count data,select data totalsales select within group order totalsales data,Complex,False
+92,4,8,False,0,50.0,33.3,80.6,100.0,66.7,15.9,product category revenue split online v customer,select category customertype sum revenue data customertype group category customertype,select category sum case customertype revenue else 0 end onlinerevenue sum case customertype revenue else 0 end walkinrevenue data group category,Complex,True
+93,1000,1000,False,100,100.0,66.7,100.0,100.0,100.0,10.68,show moving average daily revenue window,select date revenue avg revenue order date row 6 preceding current row data,select date revenue avg revenue order date asc row 6 preceding 6 following movingaveragerevenue data,Complex,True
+94,1,7,False,0,14.3,50.0,33.3,0.0,100.0,19.68,month total order,select month count data group month count select count 12 data,select month data group month order count orderid desc limit 1,Complex,True
+95,2,1,False,0,0.0,0.0,50.0,0.0,50.0,48.07,revenue difference highest lowest performing salesperson,select max total min total select sum revenue total data group salesperson,select sum totalsales data salesperson select salesperson data order totalsales desc limit 1 union select sum totalsales data salesperson select salesperson data order totalsales asc limit 1,Complex,True
+96,5,5,True,100,100.0,100.0,66.7,100.0,100.0,7.72,show region product sold,select region data group region count distinct product select count distinct product data,select region data group region count distinct product select count distinct product data,Complex,True
+97,36,12,False,0,0.0,66.7,100.0,100.0,100.0,16.93,average order value trend quarter year,select year quarter avg totalsales data group year quarter order year quarter,select strftime date year strftime date month strftime q date quarter avg totalsales averageordervalue data group year month quarter order year month quarter,Complex,True
+98,1000,1000,False,0,100.0,50.0,75.0,50.0,100.0,8.56,cumulative sum quantity sold per product ordered date,select product date quantity sum quantity partition product order date data,select date product sum quantity partition product order date cumulativequantity data,Complex,True
+99,10,0,False,50,0.0,100.0,100.0,100.0,100.0,150.01,product sold online customer,select product data group product count distinct customertype 1 max customertype,select distinct product data customertype,Complex,True
+100,0,10,False,0,0.0,0.0,26.7,0.0,100.0,34.91,compare revenue per unit across product rank,select product sum revenue quantity revenueperunit data group product order revenueperunit desc,select product revenue quantity revenueperunit rank revenue quantity order revenue quantity desc revenuerank data,Complex,False
+1,206,206,True,100,100.0,100.0,100.0,100.0,100.0,28.68,show sale north region,select data region,select data region,Simple,True
+2,10,346,False,0,2.9,5.9,100.0,100.0,100.0,5.43,list product sold 2024,select data year 2024,select distinct product data year 2024,Simple,True
+3,344,344,True,100,100.0,100.0,66.7,0.0,100.0,4.73,show order total sale 5000,select data totalsales 5000,select data totalsales 5000,Simple,True
+4,86,86,True,100,100.0,100.0,93.3,100.0,80.0,3.49,display laptop order,select data product,select data product,Simple,True
+5,10,10,True,100,100.0,100.0,93.3,100.0,80.0,3.35,list first 10 record,select data limit 10,select data limit 10,Simple,True
+6,199,199,True,100,100.0,100.0,43.3,0.0,80.0,3.91,show order paid credit card,select data paymentmethod card,select data paymentmethod card,Simple,True
+7,10,10,True,100,100.0,100.0,100.0,100.0,100.0,2.74,distinct product name,select distinct product data,select distinct product data,Simple,True
+8,222,222,True,100,100.0,100.0,95.0,100.0,80.0,3.9,show order q1,select data quarter,select data quarter,Simple,True
+9,235,235,True,100,100.0,100.0,93.3,100.0,80.0,4.01,list corporate customer order,select data customertype,select data customertype,Simple,True
+10,299,299,True,100,100.0,100.0,100.0,100.0,100.0,4.16,show order discount greater,select data discount,select data discount,Simple,True
+11,0,69,False,0,0.0,100.0,30.0,0.0,80.0,3.84,display order ali hassan,select data salesperson hassan,select data customertype hassan,Simple,True
+12,469,469,True,100,100.0,100.0,83.3,100.0,50.0,3.51,show electronics category product,select data category,select data category,Simple,True
+13,0,82,False,0,0.0,100.0,72.5,100.0,80.0,3.53,list order january,select data month,select data month,Simple,True
+14,269,269,True,100,100.0,100.0,100.0,100.0,100.0,3.4,show order rating 4,select data rating 4,select data rating 4,Simple,True
+15,185,185,True,100,100.0,100.0,100.0,100.0,100.0,3.43,display order quantity less 5,select data quantity 5,select data quantity 5,Simple,True
+16,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.74,show region dataset,select distinct region data,select distinct region data,Simple,True
+17,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.94,list payment method used,select distinct paymentmethod data,select distinct paymentmethod data,Simple,True
+18,68,68,True,100,100.0,100.0,100.0,100.0,100.0,5.83,show order east region 2023,select data region year 2023,select data region year 2023,Simple,True
+19,0,54,False,0,0.0,100.0,83.8,100.0,100.0,5.15,display smartwatch order quantity 10,select data product quantity 10,select data product quantity 10,Simple,True
+20,452,452,True,100,100.0,100.0,100.0,100.0,100.0,5.57,list order unit price 100 500,select data unitprice 100 500,select data unitprice 100 500,Simple,True
+21,20,20,True,100,100.0,100.0,90.0,100.0,80.0,4.71,show recent 20 order,select data order date desc limit 20,select data order date desc limit 20,Simple,True
+22,15,15,True,100,100.0,100.0,100.0,100.0,100.0,3.08,list salesperson dataset,select distinct salesperson data,select distinct salesperson data,Simple,True
+23,0,0,True,100,100.0,100.0,56.7,0.0,100.0,4.12,show order revenue greater total sale,select data revenue totalsales,select data revenue totalsales,Simple,True
+24,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.13,display customer type available,select distinct customertype data,select distinct customertype data,Simple,True
+25,22,22,True,100,100.0,100.0,100.0,100.0,100.0,4.72,show camera order south region,select data product region,select data region product like camera,Simple,True
+26,23,23,True,100,100.0,100.0,100.0,100.0,100.0,3.37,list order discount zero,select data discount 0,select data discount 0,Simple,True
+27,98,98,True,100,100.0,100.0,100.0,100.0,100.0,3.99,show wearable category order,select data category,select data category,Simple,True
+28,0,81,False,0,0.0,100.0,72.5,100.0,80.0,4.82,display order 2022 q4,select data year 2022 quarter,select data year 2022 quarter 4,Simple,True
+29,1000,1000,True,100,100.0,100.0,50.0,0.0,100.0,3.45,show order sorted unit price,select data order unitprice,select data order unitprice,Simple,True
+30,188,45,False,0,0.0,100.0,91.7,100.0,100.0,3.68,list returning customer order west region,select data customertype region,select data region,Simple,True
+31,17,17,True,100,100.0,100.0,100.0,100.0,100.0,3.48,show order rating exactly 5,select data rating,select data rating 5,Simple,True
+32,111,111,True,100,100.0,100.0,83.3,100.0,50.0,3.91,display office category product,select data category,select data category,Simple,True
+33,222,59,False,0,0.0,100.0,51.7,0.0,80.0,4.37,list online customer order paid online transfer,select data customertype paymentmethod transfer,select data paymentmethod transfer,Simple,True
+34,0,22,False,0,0.0,100.0,72.5,100.0,80.0,5.09,show order march 2023,select data month year 2023,select data month year 2023,Simple,True
+35,4,4,True,100,100.0,100.0,90.0,100.0,80.0,2.81,display distinct category dataset,select distinct category data,select distinct category data,Simple,True
+36,185,185,True,100,100.0,100.0,93.3,100.0,80.0,4.36,show monitor keyboard order,select data product,select data product like monitor product like keyboard,Simple,True
+37,137,137,True,100,100.0,100.0,100.0,100.0,100.0,4.07,list order revenue 10000,select data revenue 10000,select data revenue 10000,Simple,True
+38,62,62,True,100,100.0,100.0,40.0,0.0,80.0,3.76,show order handled fatima noor,select data salesperson noor,select data salesperson noor,Simple,True
+39,5,5,False,0,100.0,5.9,50.0,0.0,100.0,3.69,display cheapest 5 product unit price,select data order unitprice asc limit 5,select product data order unitprice limit 5,Simple,True
+40,196,196,True,100,100.0,100.0,93.3,100.0,80.0,3.72,show installment payment order,select data paymentmethod,select data paymentmethod,Simple,True
+41,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.01,total sale region,select region sum totalsales data group region,select region sum totalsales data group region,Aggregation,True
+42,4,10,False,0,40.0,50.0,75.0,100.0,50.0,4.01,show average unit price per product,select product avg unitprice data group product,select category avg unitprice data group category,Aggregation,True
+43,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.43,count number order per category,select category count data group category,select category count data group category,Aggregation,True
+44,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.6,total revenue year,select year sum revenue data group year,select year sum revenue data group year,Aggregation,True
+45,5,5,True,100,100.0,100.0,83.3,66.7,100.0,4.16,maximum total sale region,select region max totalsales data group region,select region max totalsales data group region,Aggregation,True
+46,1,1,True,100,100.0,100.0,100.0,100.0,100.0,2.9,overall average rating,select avg rating data,select avg rating data,Aggregation,True
+47,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.08,top 5 product total revenue,select product sum revenue data group product order sum revenue desc limit 5,select product sum revenue totalrevenue data group product order totalrevenue desc limit 5,Aggregation,True
+48,12,12,True,100,100.0,100.0,100.0,100.0,100.0,7.36,monthly total sale 2024,select month sum totalsales data year 2024 group month,select month sum totalsales data year 2024 group month,Aggregation,True
+49,15,15,True,100,100.0,50.0,100.0,100.0,100.0,5.55,many order per salesperson,select salesperson count data group salesperson,select salesperson count orderid numberoforders data group salesperson,Aggregation,True
+50,4,4,True,100,100.0,33.3,100.0,100.0,100.0,6.11,minimum maximum unit price per category,select category min unitprice max unitprice data group category,select category min unitprice minimumunitprice max unitprice maximumunitprice data group category,Aggregation,True
+51,10,10,True,100,100.0,100.0,100.0,100.0,100.0,3.85,total quantity sold product,select product sum quantity data group product,select product sum quantity data group product,Aggregation,True
+52,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.35,average discount per payment method,select paymentmethod avg discount data group paymentmethod,select paymentmethod avg discount data group paymentmethod,Aggregation,True
+53,4,4,False,0,100.0,50.0,75.0,50.0,100.0,4.22,total order per quarter,select quarter count data group quarter,select quarter data group quarter,Aggregation,True
+54,1,10,False,0,10.0,50.0,50.0,50.0,50.0,3.22,average rating product,select product avg rating data group product,select avg rating data,Aggregation,True
+55,4,4,True,100,100.0,100.0,100.0,100.0,100.0,4.09,sum revenue per customer type,select customertype sum revenue data group customertype,select customertype sum revenue data group customertype,Aggregation,True
+56,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.02,count distinct product per region,select region count distinct product data group region,select region count distinct product data group region,Aggregation,True
+57,5,5,True,100,100.0,50.0,66.7,100.0,100.0,4.83,average quantity per order region,select region avg quantity data group region,select region avg quantity averagequantity data group region,Aggregation,True
+58,3,3,True,100,100.0,50.0,88.9,66.7,100.0,6.86,top 3 salesperson total revenue,select salesperson sum revenue data group salesperson order sum revenue desc limit 3,select salesperson sum revenue totalrevenue data group salesperson order totalrevenue desc limit 3,Aggregation,True
+59,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.36,total sale per payment method,select paymentmethod sum totalsales data group paymentmethod,select paymentmethod sum totalsales data group paymentmethod,Aggregation,True
+60,1,1,True,100,100.0,100.0,83.3,50.0,100.0,5.05,number order 5000 total sale,select count data totalsales 5000,select count data totalsales 5000,Aggregation,True
+61,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.95,average revenue per year,select year avg revenue data group year,select year avg revenue data group year,Aggregation,True
+62,1,1,False,0,100.0,50.0,66.7,0.0,100.0,3.81,highest rated product average,select product avg rating data group product order avg rating desc limit 1,select product data order rating desc limit 1,Aggregation,True
+63,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.88,total number corporate order per region,select region count data customertype group region,select region count orderid data customertype group region,Aggregation,True
+64,5,5,False,0,100.0,50.0,62.5,0.0,100.0,4.28,lowest 5 product average unit price,select product avg unitprice data group product order avg unitprice asc limit 5,select product data order unitprice desc limit 5,Aggregation,True
+65,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.92,many distinct salesperson per region,select region count distinct salesperson data group region,select region count distinct salesperson data group region,Aggregation,True
+66,1,10,False,0,10.0,0.0,50.0,50.0,50.0,3.8,total discount amount product,select product sum discount totalsales data group product,select sum discount data,Aggregation,True
+67,12,12,True,100,100.0,100.0,66.7,66.7,66.7,5.77,average total sale per month across year,select month avg totalsales data group month,select month avg totalsales data group month,Aggregation,True
+68,12,12,True,100,100.0,66.7,100.0,100.0,100.0,6.67,count order per year quarter,select year quarter count data group year quarter,select year quarter count orderid data group year quarter,Aggregation,True
+69,1,1,False,0,100.0,0.0,87.5,100.0,50.0,4.34,total revenue electronics category,select sum revenue data category,select sum totalsales data category,Aggregation,True
+70,538,5,False,0,0.0,50.0,100.0,100.0,100.0,6.71,product 100 order,select product count data group product count 100,select product data product select product data group product count 100,Aggregation,True
+71,50,50,True,100,100.0,66.7,100.0,100.0,100.0,6.61,show total sale region product,select region product sum totalsales data group region product,select region product sum totalsales totalsales data group region product,Complex,True
+72,316,316,False,0,100.0,5.9,100.0,100.0,100.0,4.34,product revenue,select data revenue select avg revenue data,select product data revenue select avg revenue data,Complex,True
+73,1,1,False,0,100.0,50.0,33.3,0.0,50.0,3.65,region highest total revenue,select region sum revenue data group region order sum revenue desc limit 1,select region data order totalsales desc limit 1,Complex,True
+74,11,11,True,100,100.0,100.0,100.0,100.0,100.0,8.67,monthly sale trend laptop 2024,select month sum totalsales data product year 2024 group month,select month sum totalsales data year 2024 product like laptop group month order month,Complex,True
+75,12,12,False,100,100.0,66.7,83.3,66.7,100.0,7.13,compare total revenue customer type per year,select year customertype sum revenue data group year customertype,select customertype year sum revenue totalrevenue data group customertype year order year totalrevenue desc,Complex,True
+76,0,3,False,0,0.0,0.0,37.8,33.3,100.0,4.01,top 3 region average order rating,select region avg rating data group region order avg rating desc limit 3,select region data order avg rating desc limit 3,Complex,False
+77,10,10,False,0,100.0,50.0,58.3,66.7,50.0,9.59,percentage total revenue product contributes,select product round sum revenue select sum revenue data 2 data group product,select product totalsales select sum totalsales data percentageoftotalrevenue data group product,Complex,True
+78,1,7,False,0,14.3,50.0,16.7,0.0,50.0,4.16,salesperson generated total revenue,select salesperson sum revenue data group salesperson sum revenue select avg total select sum revenue total data group salesperson,select salesperson data order totalsales desc limit 1,Complex,True
+79,12,20,False,0,60.0,33.3,83.3,100.0,66.7,8.77,quarterly revenue trend region,select region quarter sum revenue data group region quarter order region quarter,select year quarter sum revenue totalrevenue data group year quarter order year quarter,Complex,True
+80,50,50,True,100,100.0,66.7,66.7,50.0,100.0,7.56,product highest sale region,select region product sum totalsales data group region product order region sum totalsales desc,select region product sum totalsales totalsales data group region product order totalsales desc,Complex,True
+81,1000,3,False,50,0.0,50.0,100.0,100.0,100.0,10.27,revenue growth,select year sum revenue data group year order year,select year revenue lag revenue 1 0 order year previousyearrevenue data order year,Complex,True
+82,12,12,False,100,100.0,100.0,58.3,100.0,75.0,8.03,average revenue per order product category year,select year category avg revenue data group year category,select category year avg revenue data group category year,Complex,True
+83,0,15,False,50,0.0,100.0,65.0,100.0,50.0,9.12,find salesperson sold product category,select salesperson data group salesperson count distinct category select count distinct category data,select salesperson data salesperson select salesperson data group salesperson count category select count distinct category data,Complex,True
+84,5,10,False,50,50.0,0.0,75.0,100.0,50.0,3.13,product sold every region,select product data group product count distinct region select count distinct region data,select distinct region data,Complex,True
+85,12,12,False,100,100.0,50.0,100.0,100.0,100.0,13.6,monthly trend average discount rate 2024,select month avg discount data year 2024 group month,select strftime date month avg discount averagediscountrate data strftime date group month order month,Complex,True
+86,5,2,False,0,0.0,33.3,58.3,75.0,50.0,9.14,compare cash v credit card payment total revenue average rating,select paymentmethod sum revenue avg rating data paymentmethod card group paymentmethod,select paymentmethod sum totalsales totalrevenue avg rating averagerating data group paymentmethod,Complex,True
+87,50,50,False,0,100.0,25.0,100.0,100.0,100.0,8.69,rank product total sale within region,select region product sum totalsales rank partition region order sum totalsales desc data group region product,select product sum totalsales totalsales data group product region order totalsales desc,Complex,True
+88,1000,1000,False,0,100.0,33.3,75.0,50.0,100.0,6.01,running total revenue date,select date revenue sum revenue order date data,select date sum revenue order date runningtotalrevenue data,Complex,True
+89,1,1,False,0,100.0,50.0,66.7,100.0,100.0,5.19,category average unit price exceeds 500,select category avg unitprice data group category avg unitprice 500,select category data group category avg unitprice 500,Complex,True
+90,75,75,True,100,100.0,66.7,75.0,50.0,100.0,9.79,top salesperson region revenue,select region salesperson sum revenue data group region salesperson order region sum revenue desc,select region salesperson sum revenue totalrevenue data group region salesperson order region totalrevenue desc,Complex,True
+91,0,101,False,0,0.0,0.0,15.6,0.0,100.0,8.16,order total sale top 10 percent,select data totalsales select totalsales data order totalsales desc limit 1 offset select count data,select data totalsales select within group order totalsales data,Complex,False
+92,4,8,False,0,50.0,33.3,80.6,100.0,66.7,15.9,product category revenue split online v customer,select category customertype sum revenue data customertype group category customertype,select category sum case customertype revenue else 0 end onlinerevenue sum case customertype revenue else 0 end walkinrevenue data group category,Complex,True
+93,1000,1000,False,100,100.0,66.7,100.0,100.0,100.0,10.68,show moving average daily revenue window,select date revenue avg revenue order date row 6 preceding current row data,select date revenue avg revenue order date asc row 6 preceding 6 following movingaveragerevenue data,Complex,True
+94,1,7,False,0,14.3,50.0,33.3,0.0,100.0,19.68,month total order,select month count data group month count select count 12 data,select month data group month order count orderid desc limit 1,Complex,True
+95,2,1,False,0,0.0,0.0,50.0,0.0,50.0,48.07,revenue difference highest lowest performing salesperson,select max total min total select sum revenue total data group salesperson,select sum totalsales data salesperson select salesperson data order totalsales desc limit 1 union select sum totalsales data salesperson select salesperson data order totalsales asc limit 1,Complex,True
+96,5,5,True,100,100.0,100.0,66.7,100.0,100.0,7.72,show region product sold,select region data group region count distinct product select count distinct product data,select region data group region count distinct product select count distinct product data,Complex,True
+97,36,12,False,0,0.0,66.7,100.0,100.0,100.0,16.93,average order value trend quarter year,select year quarter avg totalsales data group year quarter order year quarter,select strftime date year strftime date month strftime q date quarter avg totalsales averageordervalue data group year month quarter order year month quarter,Complex,True
+98,1000,1000,False,0,100.0,50.0,75.0,50.0,100.0,8.56,cumulative sum quantity sold per product ordered date,select product date quantity sum quantity partition product order date data,select date product sum quantity partition product order date cumulativequantity data,Complex,True
+99,10,0,False,50,0.0,100.0,100.0,100.0,100.0,150.01,product sold online customer,select product data group product count distinct customertype 1 max customertype,select distinct product data customertype,Complex,True
+100,0,10,False,0,0.0,0.0,26.7,0.0,100.0,34.91,compare revenue per unit across product rank,select product sum revenue quantity revenueperunit data group product order revenueperunit desc,select product revenue quantity revenueperunit rank revenue quantity order revenue quantity desc revenuerank data,Complex,False
+1,206,206,True,100,100.0,100.0,100.0,100.0,100.0,28.68,show sale north region,select data region,select data region,Simple,True
+2,10,346,False,0,2.9,5.9,100.0,100.0,100.0,5.43,list product sold 2024,select data year 2024,select distinct product data year 2024,Simple,True
+3,344,344,True,100,100.0,100.0,66.7,0.0,100.0,4.73,show order total sale 5000,select data totalsales 5000,select data totalsales 5000,Simple,True
+4,86,86,True,100,100.0,100.0,93.3,100.0,80.0,3.49,display laptop order,select data product,select data product,Simple,True
+5,10,10,True,100,100.0,100.0,93.3,100.0,80.0,3.35,list first 10 record,select data limit 10,select data limit 10,Simple,True
+6,199,199,True,100,100.0,100.0,43.3,0.0,80.0,3.91,show order paid credit card,select data paymentmethod card,select data paymentmethod card,Simple,True
+7,10,10,True,100,100.0,100.0,100.0,100.0,100.0,2.74,distinct product name,select distinct product data,select distinct product data,Simple,True
+8,222,222,True,100,100.0,100.0,95.0,100.0,80.0,3.9,show order q1,select data quarter,select data quarter,Simple,True
+9,235,235,True,100,100.0,100.0,93.3,100.0,80.0,4.01,list corporate customer order,select data customertype,select data customertype,Simple,True
+10,299,299,True,100,100.0,100.0,100.0,100.0,100.0,4.16,show order discount greater,select data discount,select data discount,Simple,True
+11,0,69,False,0,0.0,100.0,30.0,0.0,80.0,3.84,display order ali hassan,select data salesperson hassan,select data customertype hassan,Simple,True
+12,469,469,True,100,100.0,100.0,83.3,100.0,50.0,3.51,show electronics category product,select data category,select data category,Simple,True
+13,0,82,False,0,0.0,100.0,72.5,100.0,80.0,3.53,list order january,select data month,select data month,Simple,True
+14,269,269,True,100,100.0,100.0,100.0,100.0,100.0,3.4,show order rating 4,select data rating 4,select data rating 4,Simple,True
+15,185,185,True,100,100.0,100.0,100.0,100.0,100.0,3.43,display order quantity less 5,select data quantity 5,select data quantity 5,Simple,True
+16,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.74,show region dataset,select distinct region data,select distinct region data,Simple,True
+17,5,5,True,100,100.0,100.0,100.0,100.0,100.0,2.94,list payment method used,select distinct paymentmethod data,select distinct paymentmethod data,Simple,True
+18,68,68,True,100,100.0,100.0,100.0,100.0,100.0,5.83,show order east region 2023,select data region year 2023,select data region year 2023,Simple,True
+19,0,54,False,0,0.0,100.0,83.8,100.0,100.0,5.15,display smartwatch order quantity 10,select data product quantity 10,select data product quantity 10,Simple,True
+20,452,452,True,100,100.0,100.0,100.0,100.0,100.0,5.57,list order unit price 100 500,select data unitprice 100 500,select data unitprice 100 500,Simple,True
+21,20,20,True,100,100.0,100.0,90.0,100.0,80.0,4.71,show recent 20 order,select data order date desc limit 20,select data order date desc limit 20,Simple,True
+22,15,15,True,100,100.0,100.0,100.0,100.0,100.0,3.08,list salesperson dataset,select distinct salesperson data,select distinct salesperson data,Simple,True
+23,0,0,True,100,100.0,100.0,56.7,0.0,100.0,4.12,show order revenue greater total sale,select data revenue totalsales,select data revenue totalsales,Simple,True
+24,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.13,display customer type available,select distinct customertype data,select distinct customertype data,Simple,True
+25,22,22,True,100,100.0,100.0,100.0,100.0,100.0,4.72,show camera order south region,select data product region,select data region product like camera,Simple,True
+26,23,23,True,100,100.0,100.0,100.0,100.0,100.0,3.37,list order discount zero,select data discount 0,select data discount 0,Simple,True
+27,98,98,True,100,100.0,100.0,100.0,100.0,100.0,3.99,show wearable category order,select data category,select data category,Simple,True
+28,0,81,False,0,0.0,100.0,72.5,100.0,80.0,4.82,display order 2022 q4,select data year 2022 quarter,select data year 2022 quarter 4,Simple,True
+29,1000,1000,True,100,100.0,100.0,50.0,0.0,100.0,3.45,show order sorted unit price,select data order unitprice,select data order unitprice,Simple,True
+30,188,45,False,0,0.0,100.0,91.7,100.0,100.0,3.68,list returning customer order west region,select data customertype region,select data region,Simple,True
+31,17,17,True,100,100.0,100.0,100.0,100.0,100.0,3.48,show order rating exactly 5,select data rating,select data rating 5,Simple,True
+32,111,111,True,100,100.0,100.0,83.3,100.0,50.0,3.91,display office category product,select data category,select data category,Simple,True
+33,222,59,False,0,0.0,100.0,51.7,0.0,80.0,4.37,list online customer order paid online transfer,select data customertype paymentmethod transfer,select data paymentmethod transfer,Simple,True
+34,0,22,False,0,0.0,100.0,72.5,100.0,80.0,5.09,show order march 2023,select data month year 2023,select data month year 2023,Simple,True
+35,4,4,True,100,100.0,100.0,90.0,100.0,80.0,2.81,display distinct category dataset,select distinct category data,select distinct category data,Simple,True
+36,185,185,True,100,100.0,100.0,93.3,100.0,80.0,4.36,show monitor keyboard order,select data product,select data product like monitor product like keyboard,Simple,True
+37,137,137,True,100,100.0,100.0,100.0,100.0,100.0,4.07,list order revenue 10000,select data revenue 10000,select data revenue 10000,Simple,True
+38,62,62,True,100,100.0,100.0,40.0,0.0,80.0,3.76,show order handled fatima noor,select data salesperson noor,select data salesperson noor,Simple,True
+39,5,5,False,0,100.0,5.9,50.0,0.0,100.0,3.69,display cheapest 5 product unit price,select data order unitprice asc limit 5,select product data order unitprice limit 5,Simple,True
+40,196,196,True,100,100.0,100.0,93.3,100.0,80.0,3.72,show installment payment order,select data paymentmethod,select data paymentmethod,Simple,True
+41,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.01,total sale region,select region sum totalsales data group region,select region sum totalsales data group region,Aggregation,True
+42,4,10,False,0,40.0,50.0,75.0,100.0,50.0,4.01,show average unit price per product,select product avg unitprice data group product,select category avg unitprice data group category,Aggregation,True
+43,4,4,True,100,100.0,100.0,100.0,100.0,100.0,3.43,count number order per category,select category count data group category,select category count data group category,Aggregation,True
+44,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.6,total revenue year,select year sum revenue data group year,select year sum revenue data group year,Aggregation,True
+45,5,5,True,100,100.0,100.0,83.3,66.7,100.0,4.16,maximum total sale region,select region max totalsales data group region,select region max totalsales data group region,Aggregation,True
+46,1,1,True,100,100.0,100.0,100.0,100.0,100.0,2.9,overall average rating,select avg rating data,select avg rating data,Aggregation,True
+47,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.08,top 5 product total revenue,select product sum revenue data group product order sum revenue desc limit 5,select product sum revenue totalrevenue data group product order totalrevenue desc limit 5,Aggregation,True
+48,12,12,True,100,100.0,100.0,100.0,100.0,100.0,7.36,monthly total sale 2024,select month sum totalsales data year 2024 group month,select month sum totalsales data year 2024 group month,Aggregation,True
+49,15,15,True,100,100.0,50.0,100.0,100.0,100.0,5.55,many order per salesperson,select salesperson count data group salesperson,select salesperson count orderid numberoforders data group salesperson,Aggregation,True
+50,4,4,True,100,100.0,33.3,100.0,100.0,100.0,6.11,minimum maximum unit price per category,select category min unitprice max unitprice data group category,select category min unitprice minimumunitprice max unitprice maximumunitprice data group category,Aggregation,True
+51,10,10,True,100,100.0,100.0,100.0,100.0,100.0,3.85,total quantity sold product,select product sum quantity data group product,select product sum quantity data group product,Aggregation,True
+52,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.35,average discount per payment method,select paymentmethod avg discount data group paymentmethod,select paymentmethod avg discount data group paymentmethod,Aggregation,True
+53,4,4,False,0,100.0,50.0,75.0,50.0,100.0,4.22,total order per quarter,select quarter count data group quarter,select quarter data group quarter,Aggregation,True
+54,1,10,False,0,10.0,50.0,50.0,50.0,50.0,3.22,average rating product,select product avg rating data group product,select avg rating data,Aggregation,True
+55,4,4,True,100,100.0,100.0,100.0,100.0,100.0,4.09,sum revenue per customer type,select customertype sum revenue data group customertype,select customertype sum revenue data group customertype,Aggregation,True
+56,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.02,count distinct product per region,select region count distinct product data group region,select region count distinct product data group region,Aggregation,True
+57,5,5,True,100,100.0,50.0,66.7,100.0,100.0,4.83,average quantity per order region,select region avg quantity data group region,select region avg quantity averagequantity data group region,Aggregation,True
+58,3,3,True,100,100.0,50.0,88.9,66.7,100.0,6.86,top 3 salesperson total revenue,select salesperson sum revenue data group salesperson order sum revenue desc limit 3,select salesperson sum revenue totalrevenue data group salesperson order totalrevenue desc limit 3,Aggregation,True
+59,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.36,total sale per payment method,select paymentmethod sum totalsales data group paymentmethod,select paymentmethod sum totalsales data group paymentmethod,Aggregation,True
+60,1,1,True,100,100.0,100.0,83.3,50.0,100.0,5.05,number order 5000 total sale,select count data totalsales 5000,select count data totalsales 5000,Aggregation,True
+61,3,3,True,100,100.0,100.0,100.0,100.0,100.0,3.95,average revenue per year,select year avg revenue data group year,select year avg revenue data group year,Aggregation,True
+62,1,1,False,0,100.0,50.0,66.7,0.0,100.0,3.81,highest rated product average,select product avg rating data group product order avg rating desc limit 1,select product data order rating desc limit 1,Aggregation,True
+63,5,5,True,100,100.0,50.0,88.9,66.7,100.0,6.88,total number corporate order per region,select region count data customertype group region,select region count orderid data customertype group region,Aggregation,True
+64,5,5,False,0,100.0,50.0,62.5,0.0,100.0,4.28,lowest 5 product average unit price,select product avg unitprice data group product order avg unitprice asc limit 5,select product data order unitprice desc limit 5,Aggregation,True
+65,5,5,True,100,100.0,100.0,100.0,100.0,100.0,4.92,many distinct salesperson per region,select region count distinct salesperson data group region,select region count distinct salesperson data group region,Aggregation,True
+66,1,10,False,0,10.0,0.0,50.0,50.0,50.0,3.8,total discount amount product,select product sum discount totalsales data group product,select sum discount data,Aggregation,True
+67,12,12,True,100,100.0,100.0,66.7,66.7,66.7,5.77,average total sale per month across year,select month avg totalsales data group month,select month avg totalsales data group month,Aggregation,True
+68,12,12,True,100,100.0,66.7,100.0,100.0,100.0,6.67,count order per year quarter,select year quarter count data group year quarter,select year quarter count orderid data group year quarter,Aggregation,True
+69,1,1,False,0,100.0,0.0,87.5,100.0,50.0,4.34,total revenue electronics category,select sum revenue data category,select sum totalsales data category,Aggregation,True
+70,538,5,False,0,0.0,50.0,100.0,100.0,100.0,6.71,product 100 order,select product count data group product count 100,select product data product select product data group product count 100,Aggregation,True
+71,50,50,True,100,100.0,66.7,100.0,100.0,100.0,6.61,show total sale region product,select region product sum totalsales data group region product,select region product sum totalsales totalsales data group region product,Complex,True
+72,316,316,False,0,100.0,5.9,100.0,100.0,100.0,4.34,product revenue,select data revenue select avg revenue data,select product data revenue select avg revenue data,Complex,True
+73,1,1,False,0,100.0,50.0,33.3,0.0,50.0,3.65,region highest total revenue,select region sum revenue data group region order sum revenue desc limit 1,select region data order totalsales desc limit 1,Complex,True
+74,11,11,True,100,100.0,100.0,100.0,100.0,100.0,8.67,monthly sale trend laptop 2024,select month sum totalsales data product year 2024 group month,select month sum totalsales data year 2024 product like laptop group month order month,Complex,True
+75,12,12,False,100,100.0,66.7,83.3,66.7,100.0,7.13,compare total revenue customer type per year,select year customertype sum revenue data group year customertype,select customertype year sum revenue totalrevenue data group customertype year order year totalrevenue desc,Complex,True
+76,0,3,False,0,0.0,0.0,37.8,33.3,100.0,4.01,top 3 region average order rating,select region avg rating data group region order avg rating desc limit 3,select region data order avg rating desc limit 3,Complex,False
+77,10,10,False,0,100.0,50.0,58.3,66.7,50.0,9.59,percentage total revenue product contributes,select product round sum revenue select sum revenue data 2 data group product,select product totalsales select sum totalsales data percentageoftotalrevenue data group product,Complex,True
+78,1,7,False,0,14.3,50.0,16.7,0.0,50.0,4.16,salesperson generated total revenue,select salesperson sum revenue data group salesperson sum revenue select avg total select sum revenue total data group salesperson,select salesperson data order totalsales desc limit 1,Complex,True
+79,12,20,False,0,60.0,33.3,83.3,100.0,66.7,8.77,quarterly revenue trend region,select region quarter sum revenue data group region quarter order region quarter,select year quarter sum revenue totalrevenue data group year quarter order year quarter,Complex,True
+80,50,50,True,100,100.0,66.7,66.7,50.0,100.0,7.56,product highest sale region,select region product sum totalsales data group region product order region sum totalsales desc,select region product sum totalsales totalsales data group region product order totalsales desc,Complex,True
+81,1000,3,False,50,0.0,50.0,100.0,100.0,100.0,10.27,revenue growth,select year sum revenue data group year order year,select year revenue lag revenue 1 0 order year previousyearrevenue data order year,Complex,True
+82,12,12,False,100,100.0,100.0,58.3,100.0,75.0,8.03,average revenue per order product category year,select year category avg revenue data group year category,select category year avg revenue data group category year,Complex,True
+83,0,15,False,50,0.0,100.0,65.0,100.0,50.0,9.12,find salesperson sold product category,select salesperson data group salesperson count distinct category select count distinct category data,select salesperson data salesperson select salesperson data group salesperson count category select count distinct category data,Complex,True
+84,5,10,False,50,50.0,0.0,75.0,100.0,50.0,3.13,product sold every region,select product data group product count distinct region select count distinct region data,select distinct region data,Complex,True
+85,12,12,False,100,100.0,50.0,100.0,100.0,100.0,13.6,monthly trend average discount rate 2024,select month avg discount data year 2024 group month,select strftime date month avg discount averagediscountrate data strftime date group month order month,Complex,True
+86,5,2,False,0,0.0,33.3,58.3,75.0,50.0,9.14,compare cash v credit card payment total revenue average rating,select paymentmethod sum revenue avg rating data paymentmethod card group paymentmethod,select paymentmethod sum totalsales totalrevenue avg rating averagerating data group paymentmethod,Complex,True
+87,50,50,False,0,100.0,25.0,100.0,100.0,100.0,8.69,rank product total sale within region,select region product sum totalsales rank partition region order sum totalsales desc data group region product,select product sum totalsales totalsales data group product region order totalsales desc,Complex,True
+88,1000,1000,False,0,100.0,33.3,75.0,50.0,100.0,6.01,running total revenue date,select date revenue sum revenue order date data,select date sum revenue order date runningtotalrevenue data,Complex,True
+89,1,1,False,0,100.0,50.0,66.7,100.0,100.0,5.19,category average unit price exceeds 500,select category avg unitprice data group category avg unitprice 500,select category data group category avg unitprice 500,Complex,True
+90,75,75,True,100,100.0,66.7,75.0,50.0,100.0,9.79,top salesperson region revenue,select region salesperson sum revenue data group region salesperson order region sum revenue desc,select region salesperson sum revenue totalrevenue data group region salesperson order region totalrevenue desc,Complex,True
+91,0,101,False,0,0.0,0.0,15.6,0.0,100.0,8.16,order total sale top 10 percent,select data totalsales select totalsales data order totalsales desc limit 1 offset select count data,select data totalsales select within group order totalsales data,Complex,False
+92,4,8,False,0,50.0,33.3,80.6,100.0,66.7,15.9,product category revenue split online v customer,select category customertype sum revenue data customertype group category customertype,select category sum case customertype revenue else 0 end onlinerevenue sum case customertype revenue else 0 end walkinrevenue data group category,Complex,True
+93,1000,1000,False,100,100.0,66.7,100.0,100.0,100.0,10.68,show moving average daily revenue window,select date revenue avg revenue order date row 6 preceding current row data,select date revenue avg revenue order date asc row 6 preceding 6 following movingaveragerevenue data,Complex,True
+94,1,7,False,0,14.3,50.0,33.3,0.0,100.0,19.68,month total order,select month count data group month count select count 12 data,select month data group month order count orderid desc limit 1,Complex,True
+95,2,1,False,0,0.0,0.0,50.0,0.0,50.0,48.07,revenue difference highest lowest performing salesperson,select max total min total select sum revenue total data group salesperson,select sum totalsales data salesperson select salesperson data order totalsales desc limit 1 union select sum totalsales data salesperson select salesperson data order totalsales asc limit 1,Complex,True
+96,5,5,True,100,100.0,100.0,66.7,100.0,100.0,7.72,show region product sold,select region data group region count distinct product select count distinct product data,select region data group region count distinct product select count distinct product data,Complex,True
+97,36,12,False,0,0.0,66.7,100.0,100.0,100.0,16.93,average order value trend quarter year,select year quarter avg totalsales data group year quarter order year quarter,select strftime date year strftime date month strftime q date quarter avg totalsales averageordervalue data group year month quarter order year month quarter,Complex,True
+98,1000,1000,False,0,100.0,50.0,75.0,50.0,100.0,8.56,cumulative sum quantity sold per product ordered date,select product date quantity sum quantity partition product order date data,select date product sum quantity partition product order date cumulativequantity data,Complex,True
+99,10,0,False,50,0.0,100.0,100.0,100.0,100.0,150.01,product sold online customer,select product data group product count distinct customertype 1 max customertype,select distinct product data customertype,Complex,True
+100,0,10,False,0,0.0,0.0,26.7,0.0,100.0,34.91,compare revenue per unit across product rank,select product sum revenue quantity revenueperunit data group product order revenueperunit desc,select product revenue quantity revenueperunit rank revenue quantity order revenue quantity desc revenuerank data,Complex,False
