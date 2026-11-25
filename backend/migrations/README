@@ -1,0 +1,5 @@
+Run from the backend directory after configuring DATABASE_URL:
+
+    alembic upgrade head
+
+Create future migrations with alembic revision --autogenerate -m "describe change". Review generated migrations before applying. Never use create_all in production.
