@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: dualpath
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the environment}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d dualpath"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+  api:
+    build:
+      context: ./backend
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql+psycopg://app_user:${POSTGRES_PASSWORD}@db:5432/dualpath
+      MODEL_ARTIFACT_ROOT: /app/model-artifacts
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - uploads_data:/app/var/uploads
+      - ./TF_IDF_NN:/app/model-artifacts/TF_IDF_NN:ro
+      - ./modelbert:/app/model-artifacts/modelbert:ro
+      - ./Advanced_BERT_By_Vamshi_NLP:/app/model-artifacts/Advanced_BERT_By_Vamshi_NLP:ro
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  uploads_data:
