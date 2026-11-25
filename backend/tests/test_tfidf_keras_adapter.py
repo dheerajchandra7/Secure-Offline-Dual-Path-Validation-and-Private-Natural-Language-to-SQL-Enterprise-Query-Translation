@@ -1,3 +1,10 @@
+import os
+
+# The settings module validates required secrets at import time. These are
+# isolated test-only values and never used by the application runtime.
+os.environ.setdefault("JWT_SECRET_KEY", "unit-test-secret-key-that-is-long-enough-123456")
+os.environ.setdefault("INITIAL_ADMIN_PASSWORD", "unit-test-admin-password")
+
 from app.services.tfidf_keras_adapter import _validate_records
 from app.services.model_registry import InvalidPredictionInput
 

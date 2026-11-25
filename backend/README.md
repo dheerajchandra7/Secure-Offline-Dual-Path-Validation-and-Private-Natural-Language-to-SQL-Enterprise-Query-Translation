@@ -18,8 +18,11 @@ Replace every placeholder. Use a unique random value for POSTGRES_PASSWORD and J
     cd backend
     python -m venv .venv
     # Activate the virtual environment, then:
-    pip install -r requirements.txt
+    pip install -r requirements-dev.txt
+    python -m nltk.downloader stopwords wordnet omw-1.4
     alembic upgrade head
+
+For a production Docker build, the image installs the NLTK resources automatically.
 
 ## 4. Create the first administrator
 
@@ -45,8 +48,10 @@ API docs: http://localhost:8000/docs
 - POST /api/v1/admin/users/{id}/reject — reject an account (admin only).
 - GET /api/v1/models — list the model catalog and inference readiness (authenticated).
 - GET /api/v1/models/{model_key} — inspect a model (authenticated).
-- POST /api/v1/models/{model_key}/predict — submit a batch for inference (authenticated; HTTP 409 until the complete model bundle and trusted adapter are available).
+- POST /api/v1/models/{model_key}/predict — submit a batch for inference (authenticated).
+
+The five TF-IDF/Keras models are supported by the first inference adapter. They use the complete post-execution benchmark feature contract documented in docs/TFIDF_KERAS_INFERENCE.md; they are not pre-execution NL-query predictors.
 
 The frontend must read the non-HttpOnly csrf_token cookie and send its value as X-CSRF-Token on cookie-authenticated POST/PATCH/DELETE requests. Use HTTPS and COOKIE_SECURE=true in production.
 
-See docs/MODEL_INTEGRATION.md for artifact requirements and model readiness.
+See docs/MODEL_INTEGRATION.md and docs/TFIDF_KERAS_INFERENCE.md for model artifact requirements.
