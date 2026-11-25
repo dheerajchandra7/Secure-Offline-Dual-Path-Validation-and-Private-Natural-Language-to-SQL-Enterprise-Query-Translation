@@ -13,6 +13,18 @@ services:
       timeout: 3s
       retries: 10
     restart: unless-stopped
+  migrate:
+    build:
+      context: ./backend
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql+psycopg://app_user:${POSTGRES_PASSWORD}@db:5432/dualpath
+    command: ["alembic", "upgrade", "head"]
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
   api:
     build:
       context: ./backend
@@ -26,6 +38,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     volumes:
       - uploads_data:/app/var/uploads
       - ./TF_IDF_NN:/app/model-artifacts/TF_IDF_NN:ro
