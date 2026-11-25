@@ -8,6 +8,12 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+ARG INSTALL_INFERENCE=false
+COPY requirements-inference.txt .
+RUN if [ "$INSTALL_INFERENCE" = "true" ]; then \
+      pip install --no-cache-dir -r requirements-inference.txt; \
+    fi
+
 COPY app ./app
 COPY migrations ./migrations
 COPY alembic.ini .

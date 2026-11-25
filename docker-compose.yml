@@ -16,11 +16,14 @@ services:
   api:
     build:
       context: ./backend
+      args:
+        INSTALL_INFERENCE: "true"
     env_file:
       - ./backend/.env
     environment:
       DATABASE_URL: postgresql+psycopg://app_user:${POSTGRES_PASSWORD}@db:5432/dualpath
       MODEL_ARTIFACT_ROOT: /app/model-artifacts
+      NLTK_DATA: /app/nltk_data
     ports:
       - "8000:8000"
     depends_on:
@@ -28,8 +31,10 @@ services:
         condition: service_healthy
     volumes:
       - uploads_data:/app/var/uploads
+      - ./backend/nltk_data:/app/nltk_data:ro
       - ./TF_IDF_NN:/app/model-artifacts/TF_IDF_NN:ro
       - ./modelbert:/app/model-artifacts/modelbert:ro
+      - ./models:/app/model-artifacts/models:ro
       - ./Advanced_BERT_By_Vamshi_NLP:/app/model-artifacts/Advanced_BERT_By_Vamshi_NLP:ro
     restart: unless-stopped
 volumes:

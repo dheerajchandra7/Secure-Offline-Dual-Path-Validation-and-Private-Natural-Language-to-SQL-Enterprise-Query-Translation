@@ -15,7 +15,7 @@ class ModelCatalogItem(BaseModel):
 
 
 class PredictionRequest(BaseModel):
-    records: list[dict[str, Any]] = Field(min_length=1, max_length=1000)
+    records: list[dict[str, Any]] = Field(min_length=1, max_length=128)
 
 
 class PredictionResponse(BaseModel):
