@@ -7,6 +7,10 @@ from app.api.admin import router as admin_router
 from app.api.auth import router as auth_router
 from app.api.models import router as models_router
 from app.core.config import settings
+from app.services.adapters import register_builtin_adapters
+
+
+register_builtin_adapters()
 
 
 @asynccontextmanager
@@ -17,7 +21,7 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(
     title=settings.app_name,
-    version="0.2.0",
+    version="0.3.0",
     lifespan=lifespan,
     docs_url="/docs" if settings.app_env != "production" else None,
     redoc_url=None,

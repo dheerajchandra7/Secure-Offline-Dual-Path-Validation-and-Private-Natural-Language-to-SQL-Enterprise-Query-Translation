@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "model_key": "tfidf-dnn",
+  "target_column": "Execution_Success",
+  "prediction_stage": "pre_execution",
+  "text_fields": [
+    "NL_Query"
+  ],
+  "numeric_fields": [],
+  "preprocessing": {
+    "lowercase": true,
+    "remove_non_alphabetic": true,
+    "remove_english_stopwords": true,
+    "wordnet_lemmatization": true,
+    "min_token_length": 3
+  },
+  "vectorizer": {
+    "type": "CountVectorizer",
+    "max_features": 7000,
+    "stop_words": "english"
+  },
+  "note": "Template for a separately trained leakage-free model. Do not copy this file beside the existing checkpoint without retraining and verifying the input dimension."
+}

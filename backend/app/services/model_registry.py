@@ -1,9 +1,4 @@
-"""Allow-listed model catalog and inference boundary.
-
-Model files are never imported or executed from user-provided paths. A model is
-reported as available only when its complete inference bundle exists and a
-trusted adapter has been registered by application code.
-"""
+"""Allow-listed model catalog and inference boundary."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -27,6 +22,9 @@ class ModelSpec:
 
 
 class InferenceAdapter(Protocol):
+    def readiness(self, *, artifact_root: Path, model: ModelSpec) -> str | None:
+        """Return a human-readable blocker, or None when the adapter can run."""
+
     def predict(
         self,
         records: Sequence[Mapping[str, Any]],
@@ -49,7 +47,6 @@ _ADAPTERS: dict[str, InferenceAdapter] = {}
 
 
 def register_adapter(adapter_key: str, adapter: InferenceAdapter) -> None:
-    """Register a trusted adapter from application code; never from API input."""
     if not adapter_key or adapter_key in _ADAPTERS:
         raise ValueError(f"Invalid or duplicate model adapter: {adapter_key!r}")
     _ADAPTERS[adapter_key] = adapter
@@ -70,7 +67,7 @@ def _build_catalog() -> tuple[ModelSpec, ...]:
             display_name=name,
             family="traditional_ml",
             target_column="Execution_Success",
-            description="TF-IDF / Bag-of-Words traditional ML classifier.",
+            description="Traditional ML classifier trained on benchmark features.",
             artifact_path=artifact,
             required_files=(
                 artifact,
@@ -100,7 +97,6 @@ def _build_catalog() -> tuple[ModelSpec, ...]:
             required_files=(
                 artifact,
                 "TF_IDF_NN/vectorizer_Bag_of_Words.pkl",
-                "TF_IDF_NN/scaler.pkl",
                 "TF_IDF_NN/label_encoder.pkl",
                 "TF_IDF_NN/inference_manifest.json",
             ),
@@ -158,7 +154,7 @@ def _artifact_root() -> Path:
 
 
 def resolve_artifact_path(relative_path: str) -> Path:
-    """Resolve a catalog-owned relative path and reject traversal/symlink escape."""
+    """Resolve a catalog-owned path and reject traversal or symlink escape."""
     root = _artifact_root()
     candidate = (root / relative_path).resolve()
     if not candidate.is_relative_to(root):
@@ -167,15 +163,22 @@ def resolve_artifact_path(relative_path: str) -> Path:
 
 
 def _availability(spec: ModelSpec) -> tuple[bool, str | None]:
+    root = _artifact_root()
     missing = [
         relative
         for relative in spec.required_files
-        if not resolve_artifact_path(relative).is_file()
+        if not (root / relative).resolve().is_file()
     ]
     if missing:
         return False, "Missing required inference files: " + ", ".join(missing)
-    if spec.adapter_key not in _ADAPTERS:
+
+    adapter = _ADAPTERS.get(spec.adapter_key)
+    if adapter is None:
         return False, f"No trusted inference adapter is registered for '{spec.adapter_key}'."
+
+    blocker = adapter.readiness(artifact_root=root, model=spec)
+    if blocker:
+        return False, blocker
     return True, None
 
 
