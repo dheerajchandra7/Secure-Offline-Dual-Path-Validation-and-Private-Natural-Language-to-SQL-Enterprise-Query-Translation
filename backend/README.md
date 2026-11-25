@@ -43,5 +43,10 @@ API docs: http://localhost:8000/docs
 - GET /api/v1/admin/users/pending — list pending accounts (admin only).
 - POST /api/v1/admin/users/{id}/approve — approve an account (admin only).
 - POST /api/v1/admin/users/{id}/reject — reject an account (admin only).
+- GET /api/v1/models — list the model catalog and inference readiness (authenticated).
+- GET /api/v1/models/{model_key} — inspect a model (authenticated).
+- POST /api/v1/models/{model_key}/predict — submit a batch for inference (authenticated; HTTP 409 until the complete model bundle and trusted adapter are available).
 
 The frontend must read the non-HttpOnly csrf_token cookie and send its value as X-CSRF-Token on cookie-authenticated POST/PATCH/DELETE requests. Use HTTPS and COOKIE_SECURE=true in production.
+
+See docs/MODEL_INTEGRATION.md for artifact requirements and model readiness.

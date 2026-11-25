@@ -30,6 +30,7 @@ class Settings(BaseSettings):
     initial_admin_password: str = Field(min_length=12)
     upload_root: Path = Path("./var/uploads")
     max_upload_mb: int = Field(default=100, ge=1, le=2048)
+    model_artifact_root: Path = Path("../")
 
     @field_validator("cookie_samesite")
     @classmethod
