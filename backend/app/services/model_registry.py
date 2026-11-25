@@ -1,8 +1,8 @@
 """Allow-listed model catalog and inference boundary.
 
 Model files are never imported or executed from user-provided paths. A model is
-reported as available only when its complete inference bundle exists and a
-trusted adapter has been registered by application code.
+reported as available only when its complete inference bundle and a trusted
+adapter are registered by application code.
 """
 from __future__ import annotations
 
@@ -42,6 +42,14 @@ class ModelNotFound(LookupError):
 
 
 class ModelUnavailable(RuntimeError):
+    pass
+
+
+class InvalidPredictionInput(ValueError):
+    pass
+
+
+class ModelInferenceError(RuntimeError):
     pass
 
 

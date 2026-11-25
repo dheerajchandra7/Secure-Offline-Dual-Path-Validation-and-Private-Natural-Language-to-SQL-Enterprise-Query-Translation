@@ -8,6 +8,8 @@ from app.schemas.models import (
     PredictionResponse,
 )
 from app.services.model_registry import (
+    InvalidPredictionInput,
+    ModelInferenceError,
     ModelNotFound,
     ModelUnavailable,
     get_model_catalog,
@@ -44,9 +46,16 @@ def predict(
         predictions = run_prediction(model_key, payload.records)
     except ModelNotFound:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Model not found")
+    except InvalidPredictionInput as exc:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(exc))
     except ModelUnavailable as exc:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail={"message": "Model is not ready for inference", "reason": str(exc)},
+        )
+    except ModelInferenceError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail={"message": "Model inference is temporarily unavailable", "reason": str(exc)},
         )
     return PredictionResponse(model_key=model_key, predictions=predictions)

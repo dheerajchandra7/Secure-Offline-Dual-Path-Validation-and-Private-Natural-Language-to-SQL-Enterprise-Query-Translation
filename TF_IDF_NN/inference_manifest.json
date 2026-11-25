@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "model_family": "tfidf_keras",
+  "target_column": "Execution_Success",
+  "prediction_stage": "post_execution",
+  "description": "Feature contract reconstructed from NLP_by_Vamshi_DL_updated.ipynb and Dataset/benchmark_results.csv. This model predicts the benchmark Execution_Success label after SQL generation/execution context is available.",
+  "text_columns": [
+    "Level",
+    "NL_Query",
+    "Expected_SQL",
+    "Generated_SQL"
+  ],
+  "numeric_columns": [
+    "QueryID",
+    "Generated_Rows",
+    "Expected_Rows",
+    "Value_Match_Pct",
+    "Row_Match_Pct",
+    "Col_Match_Pct",
+    "Confidence_Score",
+    "Operation_Match",
+    "Column_Match",
+    "Generation_Time_s"
+  ],
+  "ignored_columns": [
+    "Exact_Match"
+  ],
+  "required_input_columns": [
+    "Level",
+    "NL_Query",
+    "Expected_SQL",
+    "Generated_SQL",
+    "QueryID",
+    "Generated_Rows",
+    "Expected_Rows",
+    "Value_Match_Pct",
+    "Row_Match_Pct",
+    "Col_Match_Pct",
+    "Confidence_Score",
+    "Operation_Match",
+    "Column_Match",
+    "Generation_Time_s"
+  ],
+  "preprocessing": {
+    "text": "lowercase; remove non-ASCII letters; NLTK English stopword removal; WordNet noun lemmatization; join processed text columns in source order",
+    "vectorizer": "saved CountVectorizer from vectorizer_Bag_of_Words.pkl",
+    "numeric": "saved StandardScaler from scaler.pkl; transform numeric columns in manifest order",
+    "concatenation": "sparse hstack(text features, scaled numeric features), then float32 dense array",
+    "sequence_models": "reshape to (batch, features, 1) for CNN/LSTM/GRU/BiGRU; DNN uses (batch, features)"
+  },
+  "artifacts": {
+    "vectorizer": "vectorizer_Bag_of_Words.pkl",
+    "scaler": "scaler.pkl",
+    "label_encoder": "label_encoder.pkl",
+    "models": [
+      "DNN_model.keras",
+      "CNN_model.keras",
+      "RNN_LSTM_model.keras",
+      "RNN_GRU_model.keras",
+      "RNN_BIGRU_model.keras"
+    ]
+  },
+  "limitations": [
+    "Expected_SQL, Generated_SQL, row counts and match metrics are post-generation/post-execution features.",
+    "This adapter is not suitable for pre-execution prediction or for requests that only contain a natural-language query.",
+    "The saved scaler includes QueryID because that is how the original notebook builds its numeric feature matrix; preserve this for parity until the models are retrained with a redesigned feature set."
+  ]
+}

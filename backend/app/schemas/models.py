@@ -1,6 +1,6 @@
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class ModelCatalogItem(BaseModel):
@@ -16,6 +16,13 @@ class ModelCatalogItem(BaseModel):
 
 class PredictionRequest(BaseModel):
     records: list[dict[str, Any]] = Field(min_length=1, max_length=1000)
+
+    @field_validator("records")
+    @classmethod
+    def validate_record_objects(cls, records):
+        if any(not isinstance(record, dict) for record in records):
+            raise ValueError("Every prediction record must be a JSON object.")
+        return records
 
 
 class PredictionResponse(BaseModel):
