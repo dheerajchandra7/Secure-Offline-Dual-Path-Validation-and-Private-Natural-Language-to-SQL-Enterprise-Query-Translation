@@ -22,6 +22,7 @@ separated from the input feature set and trained/evaluated independently.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import os
@@ -283,13 +284,24 @@ def feature_extraction(
     model_dir = Path(model_dir)
     model_dir.mkdir(parents=True, exist_ok=True)
     cache_path = model_dir / "X_BGE_Base_embeddings.npy"
+    cache_metadata_path = model_dir / "X_BGE_Base_embeddings.meta.json"
+    fingerprint = hashlib.sha256(
+        (model_name + "\\n" + "\\n".join(input_text)).encode("utf-8")
+    ).hexdigest()
 
-    if is_train and cache_path.is_file():
-        cached = np.load(cache_path, mmap_mode="r")
-        if cached.shape[0] == len(input_text):
-            logger.info("Loading cached BGE embeddings: %s", cache_path)
-            return np.asarray(cached, dtype=np.float32)
-        logger.warning("Embedding cache row count mismatch; recomputing embeddings.")
+    if is_train and cache_path.is_file() and cache_metadata_path.is_file():
+        try:
+            cache_metadata = json.loads(cache_metadata_path.read_text(encoding="utf-8"))
+            cached = np.load(cache_path, mmap_mode="r")
+            if (
+                cache_metadata.get("fingerprint") == fingerprint
+                and cached.shape[0] == len(input_text)
+            ):
+                logger.info("Loading matching cached BGE embeddings: %s", cache_path)
+                return np.asarray(cached, dtype=np.float32)
+        except (OSError, ValueError, json.JSONDecodeError):
+            logger.warning("Embedding cache metadata is invalid; recomputing embeddings.")
+        logger.info("Embedding cache does not match current data/model; recomputing.")
 
     logger.info("Feature extraction method: BGE-Base | Train mode: %s", is_train)
     embedder = BGEBaseEmbedder(
@@ -300,6 +312,15 @@ def feature_extraction(
 
     if is_train:
         np.save(cache_path, embeddings)
+        cache_metadata_path.write_text(
+            json.dumps({
+                "fingerprint": fingerprint,
+                "model_name": model_name,
+                "rows": len(input_text),
+                "embedding_dim": int(embeddings.shape[1]),
+            }, indent=2),
+            encoding="utf-8",
+        )
         logger.info("BGE embeddings cached at: %s", cache_path)
 
     return embeddings
