@@ -14,7 +14,6 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from app.models.model_definition import ModelDefinition  # type-only project import avoided at runtime
 from app.services.model_registry import ModelSpec, ModelUnavailable
 
 
@@ -258,5 +257,5 @@ class TfidfKerasAdapter:
             return predictions
         except ModelUnavailable:
             raise
-        except (ImportError, LookupError, OSError, ValueError, TypeError) as exc:
-            raise ModelUnavailable(f"TF-IDF Keras inference failed safely: {exc}") from exc
+        except Exception as exc:
+            raise ModelUnavailable(f"TF-IDF Keras inference failed safely: {type(exc).__name__}: {exc}") from exc

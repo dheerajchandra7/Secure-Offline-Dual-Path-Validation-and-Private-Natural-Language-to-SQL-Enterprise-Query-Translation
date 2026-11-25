@@ -46,7 +46,7 @@ python -m nltk.downloader -d ./nltk_data stopwords wordnet
 set NLTK_DATA=./nltk_data
 ```
 
-For Linux/macOS, export `NLTK_DATA=./nltk_data`. Provision NLTK corpora during image build or mount a verified read-only corpus directory in production; the API does not download NLP data at request time.
+For Linux/macOS, export `NLTK_DATA=./nltk_data`. Docker Compose mounts `backend/nltk_data` read-only at `/app/nltk_data`; provision the two corpora in that directory before starting the API. The API does not download NLP data at request time.
 
 Docker Compose enables the optional inference runtime using the `INSTALL_INFERENCE=true` build argument. This increases the image size significantly because TensorFlow is included.
 
