@@ -9,3 +9,10 @@ argon2-cffi>=23.1,<26.0
 email-validator>=2.2,<3.0
 alembic>=1.13,<2.0
 python-multipart>=0.0.9,<1.0
+# Inference dependencies for the existing TF-IDF/Keras checkpoints.
+tensorflow-cpu>=2.16.2,<2.20
+numpy>=1.26,<2.0
+scipy>=1.12,<2.0
+scikit-learn>=1.4,<1.7
+joblib>=1.3,<2.0
+nltk>=3.8,<4.0
